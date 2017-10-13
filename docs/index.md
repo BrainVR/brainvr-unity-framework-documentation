@@ -2,7 +2,6 @@
 
 BrainVR unity framework is a collection of unity objects, wrappers and placeholders, that should speed up development of unity based research paradigms. Its most beneficial addition is unified logging solution that has appropriate loading scripts in the [brainvr-logger-reader](https://github.com/BrainVR/brainvr-unity-logger-reader) thata are being kept updated with the changes done in the framework. The framewok also allows paring of json based settings, which makes it possible to build experiments irrespective of particular initiasiation values and removes the necessity to randomize things in Unity, which is not always a good idea.
 
-
 ### Main Features
 
 - Unified logging solution for noting participant's behaviour within the experiment and ready to use scripts in R to load these logs
@@ -26,12 +25,10 @@ Nevertheless, if you don't feel comfortable but would like trying it out anyway,
 If you are somewhat fluent in C# and would like to work with something that is going to speed up research development in respect to logging standards and settings parsing, this framework shoudl alleviate a lot of work. It will have some learning curve to it, but many of the troublesome parts of paradigm development have been taken care of :)
 
 ## Quick start
-This framework uses submodule for the unity logger. It might change in the future, but so far you have to initialize and update it.
+This framework requires Standard assest, but otherwise you shoudl be able to include it simply in your project as a git clone.
 
 ```sh
-git clone git@github.com:BrainVRbrainvr-unity-framework.git
-git submodule init
-git submodule update
+git clone https://github.com/BrainVR/brainvr-unity-framework.git
 ```
 
 ## Who are we?

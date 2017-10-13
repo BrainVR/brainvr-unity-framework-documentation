@@ -1,19 +1,14 @@
-One of the major problems in deciding how to implement this framework was packaging. Because I wanted this to be self serving and ready to start, I included many Standard Assets as well and modified project settings. This ultimately prevents the project from being effectively packaged into .unity package. So you have to donwload it as it is and open it as a new project. If you are familiar with forking, that is probably the safest and easiest solution.
+This package can be included as a git submodule, or simply donwloaded and placed in the unity asset folder. 
 
-This framework uses submodule for the unity-logger. It might change in the future, but so far you have to initialize and update it. 
+## Prerequisites
+This framework requires Standard assets to be present, as it relies on scripts in `InputManager` or `RigidbodyFirstPersonController`. Opening a unity project with Standards assets package shoudl be enough to get you started. If needed, you can start your project from the [demo project](https://github.com/BrainVR/brainvr-unity-framework-demo).
 
-So the full shell for cloning this repo would be:
-
-```sh
-git clone git@github.com:BrainVRbrainvr-unity-framework.git
-git submodule init
-git submodule update
-```
+Logging and parsing functions rely on [Json.net](https://www.newtonsoft.com/json) libraries. See [troubleshooting](troubleshooting.md) if you see any errors with these .dll files.
 
 When you are ready, open the unity and you can start modding.
 
 ## Preparing the scene
-You can take a look into the Demo scene, to get the feeling of how the scene shoudl/could be organized. 
+If you cloned it through demo project, you can take a look into the Demo scene, to get the feeling of how the scene shoudl/could be organized. Otherwise, here is a list of necessary and possible objects to be included.
 
 ### Necessary objects
 
@@ -41,7 +36,7 @@ You can take a look into the Demo scene, to get the feeling of how the scene sho
 
 - [Mark manager](objects.md#mark manager) similar to goal manager, but it doesn't implement any functions related to trigger entering etc.
 
-- [Arduino controller](objects.md#experiemgoalent manager) is useful if you need to send synchronisation to other devices, let's say to the EEG or EKG recordings. It is based on the [Arduino iEEG controller](https://github.com/hejtmy/iEEGArduinoConnector/tree/NET_3.5) built dll.
+- [Arduino controller](objects.md#arduino controller) is useful if you need to send synchronisation to other devices, let's say to the EEG or EKG recordings. It is based on the [Arduino iEEG controller](https://github.com/hejtmy/iEEGArduinoConnector/tree/NET_3.5) built dll.
 
 After you have these objects in the scene, you need to implement your new experiment. Read more on the coding part [later](new-experiment.md). Let's work with the demo experiment so far.
 
