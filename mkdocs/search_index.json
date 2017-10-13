@@ -1,0 +1,574 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "What it is?\n\n\nBrainVR unity framework is a collection of unity objects, wrappers and placeholders, that should speed up development of unity based research paradigms. Its most beneficial addition is unified logging solution that has appropriate loading scripts in the \nbrainvr-logger-reader\n thata are being kept updated with the changes done in the framework. The framewok also allows paring of json based settings, which makes it possible to build experiments irrespective of particular initiasiation values and removes the necessity to randomize things in Unity, which is not always a good idea.\n\n\nMain Features\n\n\n\n\n\n\nUnified logging solution for noting participant's behaviour within the experiment and ready to use scripts in R to load these logs\n\n\n\n\n\n\nJSON parsing modules for loading and serialising custom settings for each experiment, which allows modifying the paradigm without necessity to code new script for each different setting. \n\n\n\n\n\n\nUnity controllers for many objects to allow simple and fast implementation of player triggered actions, such as moving objects, playing sounds, changing materials etc.\n\n\n\n\n\n\nUnified Experiment framework designed to conceptualize adn enfforce structure to most scientific trial based experiments.\n\n\n\n\n\n\nUgly but functional Main menu to load experiments through and simple in-game menu.\n\n\n\n\n\n\nCanvas for displaying info throughout the experiment as well as tutorial/training information etc.\n\n\n\n\n\n\nIs it user friendly?\n\n\nUnlike other solutions, this framework is not particularly user friendly. It doesnt provide many components to dragg and dropp and requires understanding of both Unity and C# to an intermediate level. You should be familiar with all that Unity offers, such as basic transform and material modifications, sounds and navigation, as well as C# concepts such as interfaces, abstract classes and delegates with events. \n\n\nNevertheless, if you don't feel comfortable but would like trying it out anyway, there are already implemented projects that might help you through your first paradigm. And you can always contact us if you need any help.\n\n\nWhy and when to use it?\n\n\nIf you are somewhat fluent in C# and would like to work with something that is going to speed up research development in respect to logging standards and settings parsing, this framework shoudl alleviate a lot of work. It will have some learning curve to it, but many of the troublesome parts of paradigm development have been taken care of :)\n\n\nQuick start\n\n\nThis framework requires Standard assest, but otherwise you shoudl be able to include it simply in your project as a git clone.\n\n\ngit clone https://github.com/BrainVR/brainvr-unity-framework.git\n\n\n\n\n\nWho are we?\n\n\nThis framework has been coded by \nLuk\u00e1\u0161 Hejtm\u00e1nek\n while working at the National Institute of Mental Health and Inistitute of Physiology, ASCR. Some parts were developed in collaboration with researchers at the Center for Neuroscince at University of California, Davis.\n\n\nAcknowledgements",
+            "title": "Framework overview"
+        },
+        {
+            "location": "/#what-it-is",
+            "text": "BrainVR unity framework is a collection of unity objects, wrappers and placeholders, that should speed up development of unity based research paradigms. Its most beneficial addition is unified logging solution that has appropriate loading scripts in the  brainvr-logger-reader  thata are being kept updated with the changes done in the framework. The framewok also allows paring of json based settings, which makes it possible to build experiments irrespective of particular initiasiation values and removes the necessity to randomize things in Unity, which is not always a good idea.",
+            "title": "What it is?"
+        },
+        {
+            "location": "/#main-features",
+            "text": "Unified logging solution for noting participant's behaviour within the experiment and ready to use scripts in R to load these logs    JSON parsing modules for loading and serialising custom settings for each experiment, which allows modifying the paradigm without necessity to code new script for each different setting.     Unity controllers for many objects to allow simple and fast implementation of player triggered actions, such as moving objects, playing sounds, changing materials etc.    Unified Experiment framework designed to conceptualize adn enfforce structure to most scientific trial based experiments.    Ugly but functional Main menu to load experiments through and simple in-game menu.    Canvas for displaying info throughout the experiment as well as tutorial/training information etc.",
+            "title": "Main Features"
+        },
+        {
+            "location": "/#is-it-user-friendly",
+            "text": "Unlike other solutions, this framework is not particularly user friendly. It doesnt provide many components to dragg and dropp and requires understanding of both Unity and C# to an intermediate level. You should be familiar with all that Unity offers, such as basic transform and material modifications, sounds and navigation, as well as C# concepts such as interfaces, abstract classes and delegates with events.   Nevertheless, if you don't feel comfortable but would like trying it out anyway, there are already implemented projects that might help you through your first paradigm. And you can always contact us if you need any help.",
+            "title": "Is it user friendly?"
+        },
+        {
+            "location": "/#why-and-when-to-use-it",
+            "text": "If you are somewhat fluent in C# and would like to work with something that is going to speed up research development in respect to logging standards and settings parsing, this framework shoudl alleviate a lot of work. It will have some learning curve to it, but many of the troublesome parts of paradigm development have been taken care of :)",
+            "title": "Why and when to use it?"
+        },
+        {
+            "location": "/#quick-start",
+            "text": "This framework requires Standard assest, but otherwise you shoudl be able to include it simply in your project as a git clone.  git clone https://github.com/BrainVR/brainvr-unity-framework.git",
+            "title": "Quick start"
+        },
+        {
+            "location": "/#who-are-we",
+            "text": "This framework has been coded by  Luk\u00e1\u0161 Hejtm\u00e1nek  while working at the National Institute of Mental Health and Inistitute of Physiology, ASCR. Some parts were developed in collaboration with researchers at the Center for Neuroscince at University of California, Davis.",
+            "title": "Who are we?"
+        },
+        {
+            "location": "/#acknowledgements",
+            "text": "",
+            "title": "Acknowledgements"
+        },
+        {
+            "location": "/getting-started/",
+            "text": "This package can be included as a git submodule, or simply donwloaded and placed in the unity asset folder. \n\n\nPrerequisites\n\n\nThis framework requires Standard assets to be present, as it relies on scripts in \nInputManager\n or \nRigidbodyFirstPersonController\n. Opening a unity project with Standards assets package shoudl be enough to get you started. If needed, you can start your project from the \ndemo project\n.\n\n\nLogging and parsing functions rely on \nJson.net\n libraries. See \ntroubleshooting\n if you see any errors with these .dll files.\n\n\nWhen you are ready, open the unity and you can start modding.\n\n\nPreparing the scene\n\n\nIf you cloned it through demo project, you can take a look into the Demo scene, to get the feeling of how the scene shoudl/could be organized. Otherwise, here is a list of necessary and possible objects to be included.\n\n\nNecessary objects\n\n\n\n\n\n\nPlayer controller\n needs to be in the scene. Player controller is just an abstract class you need to extend. The framwork comes with RigidBodyPlayerController which has a prefab in the Brainvr/Player folder. If not using VR, you can safely go with that.\n\n\n\n\n\n\nExperiment manager\n Experiment manager takes care of settings loading and starting up the scene.\n\n\n\n\n\n\nLog manager\n Takes care of all the logging. It resides in the Libraries folder under the brain-vr-logger. \n\n\n\n\n\n\nInput manager\n loggs and sends events about particular key presses. It's importance is mainly in conjunction with the logger.\n\n\n\n\n\n\nCrosshair\n needs to be present, even if you don't want to show it. It deals with raycasting as well, which your experiment might almost certainly need.\n\n\n\n\n\n\nMenu\n allows starting and stopping of experiment as well as returning to main menu.\n\n\n\n\n\n\nOptional objects\n\n\n\n\n\n\nInfo canvas\n deals with displaying information on the screen. You don't have to include it if your game does not need it.\n\n\n\n\n\n\nNavigation manager\n allows to show gps like navigation on the floor or other means of navigating player.\n\n\n\n\n\n\nBeeper manager\n allows to play sounds during the experiment.\n\n\n\n\n\n\nGoal manager\n allows controlling, placement, visibility settings etc. of target destinations. Each manager controls assigned objects with a goal controller script attached.\n\n\n\n\n\n\nMark manager\n similar to goal manager, but it doesn't implement any functions related to trigger entering etc.\n\n\n\n\n\n\nArduino controller\n is useful if you need to send synchronisation to other devices, let's say to the EEG or EKG recordings. It is based on the \nArduino iEEG controller\n built dll.\n\n\n\n\n\n\nAfter you have these objects in the scene, you need to implement your new experiment. Read more on the coding part \nlater\n. Let's work with the demo experiment so far.\n\n\nManaging the experiment in scene\n\n\nSo now you have all the objects ready, it is time to put the expriment files and settings where they belong and test out, whether we can run this thing.\n\n\nManaging settings\n\n\nIt is important to understand how the experiment loading works because it is not fully straightworward. Expeirment settings are either parsed from json into \nSettingsHolder\n class or they can be inserted in the scene itself, for faster development. In the built game, only parsed settings are allowed.\n\n\nThe parsing happens in the MainMenu scene, so if you are developping the paradigm from the game, you need to serialise your settings into asset and use that from within the scene. This allows you faster editing and testgin as well.\n\n\nIn the experiment manager, you have parrented Settings object. This object is either empty, or holds DemoExperimentSettings asset. If it doens't, search for it and move it there. \n\n\nThis shoudl be all :) \n\n\nLoading proper experiment\n\n\nWhen you play the scene, the experiment Manager will try and parse the settings and set the proper experiment with \nLoadExperiment\n function. This function searches the asset/json for the experimentName parameter and then searches the assembly for a class of that name. If it finds it, it instantiates Experiment GameOObject with the Expeirment component attached.\n\n\nManaging experiment\n\n\nExperiment does load automatically throught the manager object, but it doesn't start automatically. That is what the Menu item is for. When the experiment is loaded, Menu binds it's buttons to Experiment manager functions - start, stop etc. You can enter the menu and click on Start the experiment. If it runs, great :) You can move around and then escape and stop it. That will end the experiment and save the logs.\n\n\nLogging\n\n\nYou can now take a look into the \nlogs/\n folder that resides above assets. It should contain very brief log of player activity, information about the PC settings, and lastly the exprimental procedure. If logs aren't created, check that the asset witht he settings has \nShouldLog\n property set to true.\n\n\nNext steps\n\n\nNow you should be able to implement your first experiment. Go to \nnew experiment\n to start.",
+            "title": "Getting started"
+        },
+        {
+            "location": "/getting-started/#prerequisites",
+            "text": "This framework requires Standard assets to be present, as it relies on scripts in  InputManager  or  RigidbodyFirstPersonController . Opening a unity project with Standards assets package shoudl be enough to get you started. If needed, you can start your project from the  demo project .  Logging and parsing functions rely on  Json.net  libraries. See  troubleshooting  if you see any errors with these .dll files.  When you are ready, open the unity and you can start modding.",
+            "title": "Prerequisites"
+        },
+        {
+            "location": "/getting-started/#preparing-the-scene",
+            "text": "If you cloned it through demo project, you can take a look into the Demo scene, to get the feeling of how the scene shoudl/could be organized. Otherwise, here is a list of necessary and possible objects to be included.",
+            "title": "Preparing the scene"
+        },
+        {
+            "location": "/getting-started/#necessary-objects",
+            "text": "Player controller  needs to be in the scene. Player controller is just an abstract class you need to extend. The framwork comes with RigidBodyPlayerController which has a prefab in the Brainvr/Player folder. If not using VR, you can safely go with that.    Experiment manager  Experiment manager takes care of settings loading and starting up the scene.    Log manager  Takes care of all the logging. It resides in the Libraries folder under the brain-vr-logger.     Input manager  loggs and sends events about particular key presses. It's importance is mainly in conjunction with the logger.    Crosshair  needs to be present, even if you don't want to show it. It deals with raycasting as well, which your experiment might almost certainly need.    Menu  allows starting and stopping of experiment as well as returning to main menu.",
+            "title": "Necessary objects"
+        },
+        {
+            "location": "/getting-started/#optional-objects",
+            "text": "Info canvas  deals with displaying information on the screen. You don't have to include it if your game does not need it.    Navigation manager  allows to show gps like navigation on the floor or other means of navigating player.    Beeper manager  allows to play sounds during the experiment.    Goal manager  allows controlling, placement, visibility settings etc. of target destinations. Each manager controls assigned objects with a goal controller script attached.    Mark manager  similar to goal manager, but it doesn't implement any functions related to trigger entering etc.    Arduino controller  is useful if you need to send synchronisation to other devices, let's say to the EEG or EKG recordings. It is based on the  Arduino iEEG controller  built dll.    After you have these objects in the scene, you need to implement your new experiment. Read more on the coding part  later . Let's work with the demo experiment so far.",
+            "title": "Optional objects"
+        },
+        {
+            "location": "/getting-started/#managing-the-experiment-in-scene",
+            "text": "So now you have all the objects ready, it is time to put the expriment files and settings where they belong and test out, whether we can run this thing.",
+            "title": "Managing the experiment in scene"
+        },
+        {
+            "location": "/getting-started/#managing-settings",
+            "text": "It is important to understand how the experiment loading works because it is not fully straightworward. Expeirment settings are either parsed from json into  SettingsHolder  class or they can be inserted in the scene itself, for faster development. In the built game, only parsed settings are allowed.  The parsing happens in the MainMenu scene, so if you are developping the paradigm from the game, you need to serialise your settings into asset and use that from within the scene. This allows you faster editing and testgin as well.  In the experiment manager, you have parrented Settings object. This object is either empty, or holds DemoExperimentSettings asset. If it doens't, search for it and move it there.   This shoudl be all :)",
+            "title": "Managing settings"
+        },
+        {
+            "location": "/getting-started/#loading-proper-experiment",
+            "text": "When you play the scene, the experiment Manager will try and parse the settings and set the proper experiment with  LoadExperiment  function. This function searches the asset/json for the experimentName parameter and then searches the assembly for a class of that name. If it finds it, it instantiates Experiment GameOObject with the Expeirment component attached.",
+            "title": "Loading proper experiment"
+        },
+        {
+            "location": "/getting-started/#managing-experiment",
+            "text": "Experiment does load automatically throught the manager object, but it doesn't start automatically. That is what the Menu item is for. When the experiment is loaded, Menu binds it's buttons to Experiment manager functions - start, stop etc. You can enter the menu and click on Start the experiment. If it runs, great :) You can move around and then escape and stop it. That will end the experiment and save the logs.",
+            "title": "Managing experiment"
+        },
+        {
+            "location": "/getting-started/#logging",
+            "text": "You can now take a look into the  logs/  folder that resides above assets. It should contain very brief log of player activity, information about the PC settings, and lastly the exprimental procedure. If logs aren't created, check that the asset witht he settings has  ShouldLog  property set to true.",
+            "title": "Logging"
+        },
+        {
+            "location": "/getting-started/#next-steps",
+            "text": "Now you should be able to implement your first experiment. Go to  new experiment  to start.",
+            "title": "Next steps"
+        },
+        {
+            "location": "/experiment/overview/",
+            "text": "Variables\n\n\nFucntions\n\n\nStartExperiment\n\n\nvoid StartExperiment()\n\n\nCan only bve called if the experiment is not in state Runnign\n\n\nFinishExperiment\n\n\nvoid FinishExperiment()",
+            "title": "Overview"
+        },
+        {
+            "location": "/experiment/overview/#variables",
+            "text": "",
+            "title": "Variables"
+        },
+        {
+            "location": "/experiment/overview/#fucntions",
+            "text": "",
+            "title": "Fucntions"
+        },
+        {
+            "location": "/experiment/overview/#startexperiment",
+            "text": "void StartExperiment()  Can only bve called if the experiment is not in state Runnign",
+            "title": "StartExperiment"
+        },
+        {
+            "location": "/experiment/overview/#finishexperiment",
+            "text": "void FinishExperiment()",
+            "title": "FinishExperiment"
+        },
+        {
+            "location": "/experiment/flow/",
+            "text": "As you read in \nprevious chapter\n, each new expeirment inherits from the \nBrainVR.UnityFramework.Expeirments.Experiment\n class. This class has a certain logic and flow that is described below.\n\n\nExperiment flow\n\n\nEach experiment is separated to following phases:\n\n\n\n\nExperimentInitialise\n\n\nExperimentSetup\n\n\nExperimentStart\n\n\nExperimentFinish\n\n\nExperimentClose\n\n\n\n\nTrials run only after Expeirment is started and before it is finished. Initialisation and setup are used for instantiating oobjects and setups that need to be done in certain order. We provide two separate functions just in case somebody needs it. \n\n\nUnlike Trial functions, expeirment functions cannot be run separately, they are run in blocks of 1-3 and 4-5 with \nStartExperiment\n and \nFinishExpeirment\n functions. You don't necessarilly need to use \nFinishExpeirment\n function, as the experiment finishes automatically if the  \nCheckForEnd()\n function evaluates to true.\n\n\nEach stage has \nOnExperiment[Setup/Start ..]\n and `AfterExperiment[Setup/Start..] abstract functions that need to be implemented. These functions can remain empty, but Experiment will call them during execution.\n\n\nExample:\n\n\nprivate\n \nvoid\n \nExperimentSetup\n()\n\n\n{\n\n    \nOnExperimentSetup\n();\n\n    \nif\n \n(\nShouldLog\n)\n \nStartLogging\n();\n\n    \nSendExperimentStateChanged\n(\nExperimentState\n.\nWaitingToStart\n);\n\n    \nExperimentState\n \n=\n \nExperimentState\n.\nWaitingToStart\n;\n\n    \nAfterExperimentSetup\n();\n\n\n}\n\n\n\n\n\n\nYou can see that the \nExperiment\n setup function will eventually call both \nOnExperimentSetup\n and \nAfterExperimentSetup\n functions so your child needs to implement them. usually \nOn\n fuynction is called in the very beginning, and \nAfter\n functino at an end, but there are some exceptions that should make things cascade less violently. E.g. \nexperimentStart\n calls \nAfterExpeirmentStart\n function before calling \nTrialSetup\n. this is because otherwise trial would be already already setup, when the callback would return to the function and started calling After function. \n\n\nIf these exceptions or other positioning causes problems with timing, feel free to change the order in the Experiment class.\n\n\nTrial flow\n\n\nEach Trial is set to following stages\n\n\n\n\nTrialSetup\n\n\nTrialStart\n\n\nTrialFinish\n\n\nTrialClose\n\n\n\n\nEach stage has \nOnTrial[Setup/Start ..]\n and \nAfterTrial[Setup/Start ..]\n functions that need to be implemented in a similar way as the expeirment does.",
+            "title": "Flow"
+        },
+        {
+            "location": "/experiment/flow/#experiment-flow",
+            "text": "Each experiment is separated to following phases:   ExperimentInitialise  ExperimentSetup  ExperimentStart  ExperimentFinish  ExperimentClose   Trials run only after Expeirment is started and before it is finished. Initialisation and setup are used for instantiating oobjects and setups that need to be done in certain order. We provide two separate functions just in case somebody needs it.   Unlike Trial functions, expeirment functions cannot be run separately, they are run in blocks of 1-3 and 4-5 with  StartExperiment  and  FinishExpeirment  functions. You don't necessarilly need to use  FinishExpeirment  function, as the experiment finishes automatically if the   CheckForEnd()  function evaluates to true.  Each stage has  OnExperiment[Setup/Start ..]  and `AfterExperiment[Setup/Start..] abstract functions that need to be implemented. These functions can remain empty, but Experiment will call them during execution.  Example:  private   void   ExperimentSetup ()  { \n     OnExperimentSetup (); \n     if   ( ShouldLog )   StartLogging (); \n     SendExperimentStateChanged ( ExperimentState . WaitingToStart ); \n     ExperimentState   =   ExperimentState . WaitingToStart ; \n     AfterExperimentSetup ();  }   You can see that the  Experiment  setup function will eventually call both  OnExperimentSetup  and  AfterExperimentSetup  functions so your child needs to implement them. usually  On  fuynction is called in the very beginning, and  After  functino at an end, but there are some exceptions that should make things cascade less violently. E.g.  experimentStart  calls  AfterExpeirmentStart  function before calling  TrialSetup . this is because otherwise trial would be already already setup, when the callback would return to the function and started calling After function.   If these exceptions or other positioning causes problems with timing, feel free to change the order in the Experiment class.",
+            "title": "Experiment flow"
+        },
+        {
+            "location": "/experiment/flow/#trial-flow",
+            "text": "Each Trial is set to following stages   TrialSetup  TrialStart  TrialFinish  TrialClose   Each stage has  OnTrial[Setup/Start ..]  and  AfterTrial[Setup/Start ..]  functions that need to be implemented in a similar way as the expeirment does.",
+            "title": "Trial flow"
+        },
+        {
+            "location": "/experiment/new-experiment/",
+            "text": "So you want to implement your first experiment? First go to the \ngetting started\n section and try that the framework runs and logs. If you don\u00a8t encounter any issues, it is time to implement your first custom script.\n\n\nThere are several staps you will need to do to create a new experiment in this framework.\n\n\n\n\nCreate experiement class\n\n\nCreate experiemnt settings class and creatting settings asset\n\n\nSetting up the scene according to your liking\n\n\nModify the experiment class\n\n\n\n\nCreating experiment class\n\n\nRequired functions\n\n\nBelow is a complete list of functions that need to be implemented in the Expeirment flow. Many of these functions can effectively remain empty without hindering your expeirment performance. They are just there in case you need them.\n\n\nExperiment functions:\n\n\npublic\n \nabstract\n \nvoid\n \nAddSettings\n(\nExperimentSettings\n \nsettings\n);\n\n\nvoid\n \nOnExperimentInitialise\n();\n\n\nvoid\n \nAfterExperimentInitialise\n();\n\n\nvoid\n \nOnExperimentSetup\n();\n\n\nvoid\n \nAfterExperimentSetup\n();\n\n\nvoid\n \nOnExperimentStart\n();\n\n\nvoid\n \nAfterExperimentStart\n();\n\n\nvoid\n \nOnExperimentFinished\n();\n\n\nvoid\n \nAfterExperimentFinished\n();\n\n\nvoid\n \nOnExperimentClosed\n();\n\n\nvoid\n \nAfterExperimentClosed\n();\n\n\n\n\n\n\nTrial functions:\n\n\nvoid\n \nOnTrialSetup\n();\n\n\nvoid\n \nAfterTrialSetup\n();\n\n\nvoid\n \nOnTrialStart\n();\n\n\nvoid\n \nAfterTrialStart\n();\n\n\nvoid\n \nOnTrialFinished\n();\n\n\nvoid\n \nAfterTrialFinished\n();\n\n\nvoid\n \nOnTrialClosed\n();\n\n\nvoid\n \nAfterTrialClosed\n();\n\n\nbool\n \nCheckForEnd\n();\n\n\n\n\n\n\nLogging Functions:\n\n\npublic\n \nabstract\n \nstring\n \nExperimentHeaderLog\n();\n\n\n\n\n\n\nCreating experiment settings class\n\n\nNeed\n- Settings object\n- Experiemnt manager\n- PlayerController - some sort of\n\n\nPlace setting asset on the settings game object. When scene loads, this will get registered in the experiment manager",
+            "title": "New experiemnt"
+        },
+        {
+            "location": "/experiment/new-experiment/#creating-experiment-class",
+            "text": "",
+            "title": "Creating experiment class"
+        },
+        {
+            "location": "/experiment/new-experiment/#required-functions",
+            "text": "Below is a complete list of functions that need to be implemented in the Expeirment flow. Many of these functions can effectively remain empty without hindering your expeirment performance. They are just there in case you need them.  Experiment functions:  public   abstract   void   AddSettings ( ExperimentSettings   settings );  void   OnExperimentInitialise ();  void   AfterExperimentInitialise ();  void   OnExperimentSetup ();  void   AfterExperimentSetup ();  void   OnExperimentStart ();  void   AfterExperimentStart ();  void   OnExperimentFinished ();  void   AfterExperimentFinished ();  void   OnExperimentClosed ();  void   AfterExperimentClosed ();   Trial functions:  void   OnTrialSetup ();  void   AfterTrialSetup ();  void   OnTrialStart ();  void   AfterTrialStart ();  void   OnTrialFinished ();  void   AfterTrialFinished ();  void   OnTrialClosed ();  void   AfterTrialClosed ();  bool   CheckForEnd ();   Logging Functions:  public   abstract   string   ExperimentHeaderLog ();",
+            "title": "Required functions"
+        },
+        {
+            "location": "/experiment/new-experiment/#creating-experiment-settings-class",
+            "text": "Need\n- Settings object\n- Experiemnt manager\n- PlayerController - some sort of  Place setting asset on the settings game object. When scene loads, this will get registered in the experiment manager",
+            "title": "Creating experiment settings class"
+        },
+        {
+            "location": "/objects/",
+            "text": "Arena objects\n\n\nArena objects are game objects with implemented functions for positionings, rotations etc. Arena objects come with Arena object manager as well, which allows grouping of controllers of the same type and doing madifications groupwise (such as setting same height or colour). Specific implementations of arena object is the Goal object (\nGoal controller\nand \nGoal manager\n) and mark object (\nMark controller\nand \nMark manager\n), see those sections for info.\n\n\nArena object controller\n\n\nArena obejct (AO) controller shoudl consist of a single empty game object with only controller script attached. It has \nPossibleObjects\n and \nActiveObject\n parameters which are usually children obejcts, that AO can change \"into\". When creating an AO object, don't forget to add it's child object as well. Goal object prefab has one such example prepared.\n\n\nVariables\n\n\n\n\n\n\n\n\nVariable\n\n\nPurpose\n\n\n\n\n\n\n\n\n\n\nActiveObject\n\n\nactive game object if any\n\n\n\n\n\n\nPossibleObjects\n\n\nContains an array of possible nested gameobjects to be played with with \nSetType\n. Can be set in unity\n\n\n\n\n\n\nPosition\n\n\nVector3 position in world coordinates\n\n\n\n\n\n\n\n\nFunctions\n\n\n\n\n\n\n\n\nFunction\n\n\nPurpose\n\n\n\n\n\n\n\n\n\n\nShow\n\n\nShows the object and enables all non trigger collider.\n\n\n\n\n\n\nHide\n\n\nIf the ocject is visible, it becomes invisible\n\n\n\n\n\n\nSetRotation\n\n\nSets the obejct rotation with the Quaternion.\n\n\n\n\n\n\nStartRotation\n\n\nStarts rotating the object in a given vector.\n\n\n\n\n\n\nStopRotation\n\n\nIf the object is rotating, stops the rotation.\n\n\n\n\n\n\nSetSize\n\n\nSets the scale according to passed vector.\n\n\n\n\n\n\nSetColor\n\n\nSets the colour of the main material of the object. Saves the previous colour so you can call \nResetColor()\n\n\n\n\n\n\nResetColor\n\n\nresets the color to the original one.\n\n\n\n\n\n\nSetType\n\n\nSets the object to the one desired, based on its string name.\n\n\n\n\n\n\nSwitch\n\n\nSwitches betwen visible and invisible state and returns the current state.\n\n\n\n\n\n\n\n\nArena object manager\n\n\nArena object manager allows to manage and controll all assigned controllers of a given type. Common practice is to have a single manager for each type of object that you have in scene. \nBy defualt, Arena object manager is a singleton, so you can't have multiple in the same scene. If you need more, you can override the base class or create multiple child classes of distinct names out of the single implementation of a single manager (eg. Start manager can have two children, Star1Manager and Start2Manager which inherit from the a base class)\n\n\nVariables\n\n\n\n\n\n\n\n\nVariable\n\n\nPurpose\n\n\n\n\n\n\n\n\n\n\nObjects\n\n\nGeneric list of all the obejct of the fiven type that manager holds.\n\n\n\n\n\n\n\n\nFunctions\n\n\n\n\n\n\n\n\nFunction\n\n\nPurpose\n\n\n\n\n\n\n\n\n\n\nShowAll\n\n\nShows the object and enables all non trigger collider.\n\n\n\n\n\n\nHideAll\n\n\nIf the ocject is visible, it becomes invisible\n\n\n\n\n\n\nSetColor\n\n\nSets the colour of all assigned objects.\n\n\n\n\n\n\nResetColor\n\n\nresets the color to the original one.\n\n\n\n\n\n\nSetType\n\n\nSets all assigned objects to the one desired, based on its string name.\n\n\n\n\n\n\n\n\nGoal Object\n\n\nGoal object adds some additional functionality to the arena object by adding event functionality. It inherits all the functionality from the \nArena Object\n and [].\n\n\nGoal controller\n\n\nEvents\n\n\nGoal manager\n\n\nMark manager\n\n\nExperiment manager\n\n\nExperiemnt manager is reponsible for loading expeirment from the data and manipulating expeirment states.\n\n\nFunctions\n\n\n\n\n\n\n\n\nFunction\n\n\nPurpose\n\n\n\n\n\n\n\n\n\n\nLoadExperiment\n\n\ninitialises the expeirment form name and possible settings file.\n\n\n\n\n\n\nStartExperiment\n\n\nStarts the expeirment.\n\n\n\n\n\n\nStopExperiment\n\n\nStops the expeirment.\n\n\n\n\n\n\nRestartExperiment\n\n\nStops and then starts expperiment. buggy ATM.\n\n\n\n\n\n\nSwitchExperimentState\n\n\nDoens't do anything at this point.\n\n\n\n\n\n\nSetTrial\n\n\nSets the trial to designated number.\n\n\n\n\n\n\n\n\nPlayer controllers\n\n\nPLayer controllers build upon the player controller and IPlayerController class to proovide bothe control as well as loggin informiaton necessary for conprehensive logs across differnet modalities of play (PC. VR, mobile etc.). Some functiuon needs to be implemented in order ot create sa new player log.\n\n\nVariables\n\n\n\n\n\n\n\n\nVariable\n\n\nPurpose\n\n\n\n\n\n\n\n\n\n\nObjects\n\n\nGeneric list of all the obejct of the fiven type that manager holds.\n\n\n\n\n\n\n\n\nFunctions\n\n\n\n\n\n\n\n\nFunction\n\n\nPurpose\n\n\n\n\n\n\n\n\n\n\nMoveToCenter\n\n\nGeneric list of all the obejct of the fiven type that manager holds.\n\n\n\n\n\n\n\n\nRigidbody player controller\n\n\nBeeper\n\n\nBeepers are designed to simply play sounds when certain events happen within the game. Beeper objects have beeper manager and beeper controlers.\n\n\nBeeper Manager\n\n\nBeeperManager\n takes care of cntrolling all attached controllers and plays souds based on string designation\n\n\nVariables\n\n\n\n\n\n\n\n\nVariable\n\n\nFunction\n\n\n\n\n\n\n\n\n\n\nBeeperControlles\n\n\nlist of all attached BeeperControllers.\n\n\n\n\n\n\n\n\nFunction\n\n\n\n\n\n\n\n\nFunction\n\n\nFunction\n\n\n\n\n\n\n\n\n\n\nPlay\n\n\nPlays one shot of the sounds in the controller\n\n\n\n\n\n\n\n\n\n\nData holders\n\n\nSettings holder\n\n\nInput manager\n\n\nConsole manager",
+            "title": "Overview"
+        },
+        {
+            "location": "/objects/#arena-objects",
+            "text": "Arena objects are game objects with implemented functions for positionings, rotations etc. Arena objects come with Arena object manager as well, which allows grouping of controllers of the same type and doing madifications groupwise (such as setting same height or colour). Specific implementations of arena object is the Goal object ( Goal controller and  Goal manager ) and mark object ( Mark controller and  Mark manager ), see those sections for info.",
+            "title": "Arena objects"
+        },
+        {
+            "location": "/objects/#arena-object-controller",
+            "text": "Arena obejct (AO) controller shoudl consist of a single empty game object with only controller script attached. It has  PossibleObjects  and  ActiveObject  parameters which are usually children obejcts, that AO can change \"into\". When creating an AO object, don't forget to add it's child object as well. Goal object prefab has one such example prepared.",
+            "title": "Arena object controller"
+        },
+        {
+            "location": "/objects/#variables",
+            "text": "Variable  Purpose      ActiveObject  active game object if any    PossibleObjects  Contains an array of possible nested gameobjects to be played with with  SetType . Can be set in unity    Position  Vector3 position in world coordinates",
+            "title": "Variables"
+        },
+        {
+            "location": "/objects/#functions",
+            "text": "Function  Purpose      Show  Shows the object and enables all non trigger collider.    Hide  If the ocject is visible, it becomes invisible    SetRotation  Sets the obejct rotation with the Quaternion.    StartRotation  Starts rotating the object in a given vector.    StopRotation  If the object is rotating, stops the rotation.    SetSize  Sets the scale according to passed vector.    SetColor  Sets the colour of the main material of the object. Saves the previous colour so you can call  ResetColor()    ResetColor  resets the color to the original one.    SetType  Sets the object to the one desired, based on its string name.    Switch  Switches betwen visible and invisible state and returns the current state.",
+            "title": "Functions"
+        },
+        {
+            "location": "/objects/#arena-object-manager",
+            "text": "Arena object manager allows to manage and controll all assigned controllers of a given type. Common practice is to have a single manager for each type of object that you have in scene. \nBy defualt, Arena object manager is a singleton, so you can't have multiple in the same scene. If you need more, you can override the base class or create multiple child classes of distinct names out of the single implementation of a single manager (eg. Start manager can have two children, Star1Manager and Start2Manager which inherit from the a base class)",
+            "title": "Arena object manager"
+        },
+        {
+            "location": "/objects/#variables_1",
+            "text": "Variable  Purpose      Objects  Generic list of all the obejct of the fiven type that manager holds.",
+            "title": "Variables"
+        },
+        {
+            "location": "/objects/#functions_1",
+            "text": "Function  Purpose      ShowAll  Shows the object and enables all non trigger collider.    HideAll  If the ocject is visible, it becomes invisible    SetColor  Sets the colour of all assigned objects.    ResetColor  resets the color to the original one.    SetType  Sets all assigned objects to the one desired, based on its string name.",
+            "title": "Functions"
+        },
+        {
+            "location": "/objects/#goal-object",
+            "text": "Goal object adds some additional functionality to the arena object by adding event functionality. It inherits all the functionality from the  Arena Object  and [].",
+            "title": "Goal Object"
+        },
+        {
+            "location": "/objects/#goal-controller",
+            "text": "",
+            "title": "Goal controller"
+        },
+        {
+            "location": "/objects/#events",
+            "text": "",
+            "title": "Events"
+        },
+        {
+            "location": "/objects/#goal-manager",
+            "text": "",
+            "title": "Goal manager"
+        },
+        {
+            "location": "/objects/#mark-manager",
+            "text": "",
+            "title": "Mark manager"
+        },
+        {
+            "location": "/objects/#experiment-manager",
+            "text": "Experiemnt manager is reponsible for loading expeirment from the data and manipulating expeirment states.",
+            "title": "Experiment manager"
+        },
+        {
+            "location": "/objects/#functions_2",
+            "text": "Function  Purpose      LoadExperiment  initialises the expeirment form name and possible settings file.    StartExperiment  Starts the expeirment.    StopExperiment  Stops the expeirment.    RestartExperiment  Stops and then starts expperiment. buggy ATM.    SwitchExperimentState  Doens't do anything at this point.    SetTrial  Sets the trial to designated number.",
+            "title": "Functions"
+        },
+        {
+            "location": "/objects/#player-controllers",
+            "text": "PLayer controllers build upon the player controller and IPlayerController class to proovide bothe control as well as loggin informiaton necessary for conprehensive logs across differnet modalities of play (PC. VR, mobile etc.). Some functiuon needs to be implemented in order ot create sa new player log.",
+            "title": "Player controllers"
+        },
+        {
+            "location": "/objects/#variables_2",
+            "text": "Variable  Purpose      Objects  Generic list of all the obejct of the fiven type that manager holds.",
+            "title": "Variables"
+        },
+        {
+            "location": "/objects/#functions_3",
+            "text": "Function  Purpose      MoveToCenter  Generic list of all the obejct of the fiven type that manager holds.",
+            "title": "Functions"
+        },
+        {
+            "location": "/objects/#rigidbody-player-controller",
+            "text": "",
+            "title": "Rigidbody player controller"
+        },
+        {
+            "location": "/objects/#beeper",
+            "text": "Beepers are designed to simply play sounds when certain events happen within the game. Beeper objects have beeper manager and beeper controlers.",
+            "title": "Beeper"
+        },
+        {
+            "location": "/objects/#beeper-manager",
+            "text": "BeeperManager  takes care of cntrolling all attached controllers and plays souds based on string designation",
+            "title": "Beeper Manager"
+        },
+        {
+            "location": "/objects/#variables_3",
+            "text": "Variable  Function      BeeperControlles  list of all attached BeeperControllers.",
+            "title": "Variables"
+        },
+        {
+            "location": "/objects/#function",
+            "text": "Function  Function      Play  Plays one shot of the sounds in the controller",
+            "title": "Function"
+        },
+        {
+            "location": "/objects/#data-holders",
+            "text": "",
+            "title": "Data holders"
+        },
+        {
+            "location": "/objects/#settings-holder",
+            "text": "",
+            "title": "Settings holder"
+        },
+        {
+            "location": "/objects/#input-manager",
+            "text": "",
+            "title": "Input manager"
+        },
+        {
+            "location": "/objects/#console-manager",
+            "text": "",
+            "title": "Console manager"
+        },
+        {
+            "location": "/objects/arena-object-manager/",
+            "text": "Description\n\n\nFunctions\n\n\nGetObject\n\n\npublic ArenaObject GetObject(int i)\n\n\nReturns an object in the list if it exists at that particular index. Otherwise returns null.\n\n\nShow\n\n\npublic void Show(int i)\n\n\nCalls \nShow\n on object at that particular index if it exists.\n\n\nShowAll\n\n\npublic void ShowAll(bool bo = true)\n\n\nIterates thorugh all objects and calls \nShow(bo)\n at each controller. See \nShow\n.\n\n\nHide\n\n\npublic void Show(int i)\n\n\nCalls \nHide\n on object at that particular index if it exists.\n\n\nHideAll\n\n\npublic void HideAll()\n\n\nSame as \nShowAll(false)\n. Runs Hide on all arena object controllers. See \nHide\n.\n\n\nSetColor\n\n\nvoid SetColor(Color color)\n\n\nSets colour of each obejct material if possible. See \nSetColor\n.\n\n\nSetType\n\n\nvoid SetType(string s, bool force = false)\n\u00a8\n\n\nIterates though objects and sets each object ot appropriate type as possible. See \nSetType\n.",
+            "title": "Arena object manager"
+        },
+        {
+            "location": "/objects/arena-object-manager/#description",
+            "text": "",
+            "title": "Description"
+        },
+        {
+            "location": "/objects/arena-object-manager/#functions",
+            "text": "",
+            "title": "Functions"
+        },
+        {
+            "location": "/objects/arena-object-manager/#getobject",
+            "text": "public ArenaObject GetObject(int i)  Returns an object in the list if it exists at that particular index. Otherwise returns null.",
+            "title": "GetObject"
+        },
+        {
+            "location": "/objects/arena-object-manager/#show",
+            "text": "public void Show(int i)  Calls  Show  on object at that particular index if it exists.",
+            "title": "Show"
+        },
+        {
+            "location": "/objects/arena-object-manager/#showall",
+            "text": "public void ShowAll(bool bo = true)  Iterates thorugh all objects and calls  Show(bo)  at each controller. See  Show .",
+            "title": "ShowAll"
+        },
+        {
+            "location": "/objects/arena-object-manager/#hide",
+            "text": "public void Show(int i)  Calls  Hide  on object at that particular index if it exists.",
+            "title": "Hide"
+        },
+        {
+            "location": "/objects/arena-object-manager/#hideall",
+            "text": "public void HideAll()  Same as  ShowAll(false) . Runs Hide on all arena object controllers. See  Hide .",
+            "title": "HideAll"
+        },
+        {
+            "location": "/objects/arena-object-manager/#setcolor",
+            "text": "void SetColor(Color color)  Sets colour of each obejct material if possible. See  SetColor .",
+            "title": "SetColor"
+        },
+        {
+            "location": "/objects/arena-object-manager/#settype",
+            "text": "void SetType(string s, bool force = false) \u00a8  Iterates though objects and sets each object ot appropriate type as possible. See  SetType .",
+            "title": "SetType"
+        },
+        {
+            "location": "/objects/arena-object/",
+            "text": "Arena object controller\n\n\nShow\n\n\npublic void Show(bool bo = true)\n\n\nIterates thorugh all renderers and colliders of the \nActiveObject\n and sets them to the \nbo\n parameter. Keeps trigger colliders active regardless.\n\n\nHide\n\n\npublic void Hide()\n\n\nSame as \nShow(false)\n. Iterates through renderers and colliders on the \nActiveObject\n and disables them.\n\n\nSet rotation\n\n\nvoid SetRotation(Quaternion rotation)\n\n\nSets \nActiveObject\n to designated rotation.\n\n\nStartRotation\n\n\nvoid StartRotation(Vector3 direction, float speed)\n\n\nStarts rotation in direction at a given \nspeed\n. If rotation is undergoing, it gets stopped and then reinstantiated. Direction of the rotation can be set using negative and positive vectors.\n\n\nStopRotation\n\n\nvoid StopRotation()\n\n\nIf the object was rotating, it stops.\n\n\nSetSize\n\n\nvoid SetSize(Vector3 scale)\n\n\nSets the scaling of the \nActiveObject\n itself. Doesn't change scale of the controller object itself.\n\n\nSetColor\n\n\nvoid SetColor(Color color)\n\n\nSets the main colour of the renderer material of hte Active object to designated colour. Any reset of colour is done towards the colour the object had during OnEnable call.\n\n\nSetType\n\n\nvoid SetType(string s, bool force = false)\n\n\nSets the type of the object to one of children objects of the same name. \n\n\nSwitch\n\n\npublic bool Switch()\n\n\nCalls Show if the object is hidden and Hide if the object is shown. Retuns bool with the current state after the change.",
+            "title": "Arena object"
+        },
+        {
+            "location": "/objects/arena-object/#arena-object-controller",
+            "text": "",
+            "title": "Arena object controller"
+        },
+        {
+            "location": "/objects/arena-object/#show",
+            "text": "public void Show(bool bo = true)  Iterates thorugh all renderers and colliders of the  ActiveObject  and sets them to the  bo  parameter. Keeps trigger colliders active regardless.",
+            "title": "Show"
+        },
+        {
+            "location": "/objects/arena-object/#hide",
+            "text": "public void Hide()  Same as  Show(false) . Iterates through renderers and colliders on the  ActiveObject  and disables them.",
+            "title": "Hide"
+        },
+        {
+            "location": "/objects/arena-object/#set-rotation",
+            "text": "void SetRotation(Quaternion rotation)  Sets  ActiveObject  to designated rotation.",
+            "title": "Set rotation"
+        },
+        {
+            "location": "/objects/arena-object/#startrotation",
+            "text": "void StartRotation(Vector3 direction, float speed)  Starts rotation in direction at a given  speed . If rotation is undergoing, it gets stopped and then reinstantiated. Direction of the rotation can be set using negative and positive vectors.",
+            "title": "StartRotation"
+        },
+        {
+            "location": "/objects/arena-object/#stoprotation",
+            "text": "void StopRotation()  If the object was rotating, it stops.",
+            "title": "StopRotation"
+        },
+        {
+            "location": "/objects/arena-object/#setsize",
+            "text": "void SetSize(Vector3 scale)  Sets the scaling of the  ActiveObject  itself. Doesn't change scale of the controller object itself.",
+            "title": "SetSize"
+        },
+        {
+            "location": "/objects/arena-object/#setcolor",
+            "text": "void SetColor(Color color)  Sets the main colour of the renderer material of hte Active object to designated colour. Any reset of colour is done towards the colour the object had during OnEnable call.",
+            "title": "SetColor"
+        },
+        {
+            "location": "/objects/arena-object/#settype",
+            "text": "void SetType(string s, bool force = false)  Sets the type of the object to one of children objects of the same name.",
+            "title": "SetType"
+        },
+        {
+            "location": "/objects/arena-object/#switch",
+            "text": "public bool Switch()  Calls Show if the object is hidden and Hide if the object is shown. Retuns bool with the current state after the change.",
+            "title": "Switch"
+        },
+        {
+            "location": "/objects/beeper-manager/",
+            "text": "When awake, it iterates through all its children and binds controller names so that it knows what it can play and what not.\n\n\nMonobehaviour\n\n\nAwake\n\n\nIterates through all the children that have \nBeeperController\n script attached and get their names. It saves the name into \nBeeperControllers\n variable.\n\n\nVariables\n\n\nBeeperControllers\n\n\npublic Dictionary<string, BeeperController> BeeperControllers\n\n\nList of all the \nBeeperController\n  as well as their names as appears in \nBeeperName\n. \n\n\nFunctions\n\n\nPlay\n\n\nvoid Play(string beeperName)\n\n\nTries to get a beepre controller of a certain name. If that controller exists, it plays one shot of that particular beeper. If not, returns \nKeyNotFoundException\n.",
+            "title": "Beeper manager"
+        },
+        {
+            "location": "/objects/beeper-manager/#monobehaviour",
+            "text": "",
+            "title": "Monobehaviour"
+        },
+        {
+            "location": "/objects/beeper-manager/#awake",
+            "text": "Iterates through all the children that have  BeeperController  script attached and get their names. It saves the name into  BeeperControllers  variable.",
+            "title": "Awake"
+        },
+        {
+            "location": "/objects/beeper-manager/#variables",
+            "text": "",
+            "title": "Variables"
+        },
+        {
+            "location": "/objects/beeper-manager/#beepercontrollers",
+            "text": "public Dictionary<string, BeeperController> BeeperControllers  List of all the  BeeperController   as well as their names as appears in  BeeperName .",
+            "title": "BeeperControllers"
+        },
+        {
+            "location": "/objects/beeper-manager/#functions",
+            "text": "",
+            "title": "Functions"
+        },
+        {
+            "location": "/objects/beeper-manager/#play",
+            "text": "void Play(string beeperName)  Tries to get a beepre controller of a certain name. If that controller exists, it plays one shot of that particular beeper. If not, returns  KeyNotFoundException .",
+            "title": "Play"
+        },
+        {
+            "location": "/objects/beeper-controller/",
+            "text": "Cotroller just holds a sounds to be played as well as string designation of the particular beeeper name.\n\n\nVariables\n\n\nBeeperName\n\n\npublic string BeeperName;\n\n\nSound\n\n\npublic AudioClip sound;\n\n\nFunction\n\n\nReturnSound\n\n\npublic AudioClip ReturnSound()\n\n\nReturns atatched \nAudioClip\n sound. I usualy played from \nBeeperManageer",
+            "title": "Beeper controller"
+        },
+        {
+            "location": "/objects/beeper-controller/#variables",
+            "text": "",
+            "title": "Variables"
+        },
+        {
+            "location": "/objects/beeper-controller/#beepername",
+            "text": "public string BeeperName;",
+            "title": "BeeperName"
+        },
+        {
+            "location": "/objects/beeper-controller/#sound",
+            "text": "public AudioClip sound;",
+            "title": "Sound"
+        },
+        {
+            "location": "/objects/beeper-controller/#function",
+            "text": "",
+            "title": "Function"
+        },
+        {
+            "location": "/objects/beeper-controller/#returnsound",
+            "text": "public AudioClip ReturnSound()  Returns atatched  AudioClip  sound. I usualy played from  BeeperManageer",
+            "title": "ReturnSound"
+        },
+        {
+            "location": "/objects/experiment-manager/",
+            "text": "Experiment manager takes care for the loading and control of the expeirment flow. You can load experiment through \nExperimentLoader\n, but Experiment manager offers more to the pont clear loading experience.\n\n\nExperiment manager needs to be in the scene as it keeps track of hte \nExperiment\n active script and allows certain level of control over it. you shouldn't call experiment directly, just refere to expeirment manager to do all necessary changes and switches ot the Experiment flow.\n\n\nFunctions\n\n\nStartExperiment\n\n\npublic void StartExperiment()\n\n\nIf the experiment is not runnign, it starts hte expeirment.\n\n\nStopExpeirment\n\n\npublic void StopExperiment()\n\n\nStops the expeirmenting if the experiment is running.\n\n\nRestartExperiment\n\n\npublic void RestartExperiment()\n\nCalls \nStopExpeirment\n and then \nStartExpoeirment\n, but it is broken after second iteration. Not sure why.\n\n\nSwitchExperimentState\n\n\npublic void SwitchExperimentState()\n\n\nDoes absolutely nothing at this point.\n\n\nSetTrial\n\n\npublic void SetTrial(int i)\n\n\nSets trial to the designated number. Finishes trial if running. Runs Tiral setup after setting the trial.",
+            "title": "Experiment manager"
+        },
+        {
+            "location": "/objects/experiment-manager/#functions",
+            "text": "",
+            "title": "Functions"
+        },
+        {
+            "location": "/objects/experiment-manager/#startexperiment",
+            "text": "public void StartExperiment()  If the experiment is not runnign, it starts hte expeirment.",
+            "title": "StartExperiment"
+        },
+        {
+            "location": "/objects/experiment-manager/#stopexpeirment",
+            "text": "public void StopExperiment()  Stops the expeirmenting if the experiment is running.",
+            "title": "StopExpeirment"
+        },
+        {
+            "location": "/objects/experiment-manager/#restartexperiment",
+            "text": "public void RestartExperiment() \nCalls  StopExpeirment  and then  StartExpoeirment , but it is broken after second iteration. Not sure why.",
+            "title": "RestartExperiment"
+        },
+        {
+            "location": "/objects/experiment-manager/#switchexperimentstate",
+            "text": "public void SwitchExperimentState()  Does absolutely nothing at this point.",
+            "title": "SwitchExperimentState"
+        },
+        {
+            "location": "/objects/experiment-manager/#settrial",
+            "text": "public void SetTrial(int i)  Sets trial to the designated number. Finishes trial if running. Runs Tiral setup after setting the trial.",
+            "title": "SetTrial"
+        },
+        {
+            "location": "/objects/player-controller/",
+            "text": "Player controller is  an abstract class that is extended by default in teh package by rigidbody player controller. It derives from \nSingleton\n class, which means it can only have a single instance within each scense.\n\n\nThe idea behinvd abstract classes shoudl solve issues with cusom logging and suctom functions that are implemented differnetly for 2D and 3D screesn as possibly for mobile screens. Therefore functions below are not necessarilly implemented by default adn you are invited to implemtnt them as you see fit when modifying the player contrller in your won project.\n\n\nFunctions\n\n\nMoveToCenter\n\n\npublic void MoveToCenter()\n\n\nUseful in experiments where the beginning of trials is positioned at the Vector3(0, y, 0) coordinates. Moves player to the center position while keeping the y axis constant.",
+            "title": "Player controller"
+        },
+        {
+            "location": "/objects/player-controller/#functions",
+            "text": "",
+            "title": "Functions"
+        },
+        {
+            "location": "/objects/player-controller/#movetocenter",
+            "text": "public void MoveToCenter()  Useful in experiments where the beginning of trials is positioned at the Vector3(0, y, 0) coordinates. Moves player to the center position while keeping the y axis constant.",
+            "title": "MoveToCenter"
+        },
+        {
+            "location": "/logging/",
+            "text": "Logging in the framework is handled by the brainvr-unity-logger package. There are several forced and several optional logging modules that you can implement in your experiment.\n\n\nEvery experiment is output in a simillar manner, with specific parts distinguished by *** and ended by ---.\n\n\n\n\nExample\n\n\n***SESSION HEADER***\n\n\n{\n    \"Participant\": \"NEO\",    \n\n    \"Timestamp\": \"16-01-20-13-09-2017\"\n\n}\n\n\n---SESSION HEADER---\n\n\n\n\nAnything below these sections is the log itself, which \n\n\nLogs are flagged with the participant id and time at which they were created. They also get saved in a folder, which is flagged with the id and the date at which they were created. This allows all logs from the same participant and the same day to be grouped together, but also keep the progressive informaation if multiple tests were made during that particpar day.\n\n\nMain logging classses\n\n\nMaster log\n\n\nResponsible for handeling and keeping track of all the logs that are happening. Turning logging on and off, instantiating logs etc. should be done through Master log. \n\n\nFunctions\n\n\n\n\n\n\n\n\nVariable\n\n\nPurpose\n\n\n\n\n\n\n\n\n\n\nInstantiate\n\n\nSets the obejct rotation with the Quaternion.\n\n\n\n\n\n\nStartLogging\n\n\nIf the object is rotating, stops the rotation.\n\n\n\n\n\n\nStopLogging\n\n\nIf the object is rotating, stops the rotation.\n\n\n\n\n\n\nCloseLogs\n\n\nIf the object is rotating, stops the rotation.\n\n\n\n\n\n\n\n\nPlayer log\n\n\nPlayer log logs player information as is sent to him from IPlayerController inferface.\n\n\nIPlayerController\n\n\nthis interface forces each player controller to implement custom header and custom player informatino to log. This is because some VR or 2D games might require different infomration to be passed and logged, so the reponsibility to log it properly is based on the player controller that is used. \n\n\n\n\n\n\n\n\nProperty\n\n\nType\n\n\nPurpose\n\n\n\n\n\n\n\n\n\n\nHeaderLine\n\n\nstring\n\n\nwhat will be the header line of the log\n\n\n\n\n\n\nPlayerInformation\n\n\nList<string>\n\n\nList of strings of values corresponsing to the HeaderLine\n\n\n\n\n\n\n\n\nExperiment info log\n\n\nTest log\n\n\nOptional logging classes\n\n\nResults",
+            "title": "Logging"
+        },
+        {
+            "location": "/logging/#main-logging-classses",
+            "text": "",
+            "title": "Main logging classses"
+        },
+        {
+            "location": "/logging/#master-log",
+            "text": "Responsible for handeling and keeping track of all the logs that are happening. Turning logging on and off, instantiating logs etc. should be done through Master log.",
+            "title": "Master log"
+        },
+        {
+            "location": "/logging/#functions",
+            "text": "Variable  Purpose      Instantiate  Sets the obejct rotation with the Quaternion.    StartLogging  If the object is rotating, stops the rotation.    StopLogging  If the object is rotating, stops the rotation.    CloseLogs  If the object is rotating, stops the rotation.",
+            "title": "Functions"
+        },
+        {
+            "location": "/logging/#player-log",
+            "text": "Player log logs player information as is sent to him from IPlayerController inferface.",
+            "title": "Player log"
+        },
+        {
+            "location": "/logging/#iplayercontroller",
+            "text": "this interface forces each player controller to implement custom header and custom player informatino to log. This is because some VR or 2D games might require different infomration to be passed and logged, so the reponsibility to log it properly is based on the player controller that is used.      Property  Type  Purpose      HeaderLine  string  what will be the header line of the log    PlayerInformation  List<string>  List of strings of values corresponsing to the HeaderLine",
+            "title": "IPlayerController"
+        },
+        {
+            "location": "/logging/#experiment-info-log",
+            "text": "",
+            "title": "Experiment info log"
+        },
+        {
+            "location": "/logging/#test-log",
+            "text": "",
+            "title": "Test log"
+        },
+        {
+            "location": "/logging/#optional-logging-classes",
+            "text": "",
+            "title": "Optional logging classes"
+        },
+        {
+            "location": "/logging/#results",
+            "text": "",
+            "title": "Results"
+        },
+        {
+            "location": "/troubleshooting/",
+            "text": "FAQ\n\n\nQ: Newtonsoft namespace cannot be found?\n\n\nA: This is most commonly caused by the default settings of the unity player to use .NET 2.0 subset, rather than full 2.0. Change that settings in the Edit/Project Settings/Player. If you still have issues, it is possible something went wrong with cloning of .dll file. Grab new one from \nnewtonsoft\n and replace the bad one.",
+            "title": "Troubleshooting"
+        },
+        {
+            "location": "/troubleshooting/#faq",
+            "text": "Q: Newtonsoft namespace cannot be found?  A: This is most commonly caused by the default settings of the unity player to use .NET 2.0 subset, rather than full 2.0. Change that settings in the Edit/Project Settings/Player. If you still have issues, it is possible something went wrong with cloning of .dll file. Grab new one from  newtonsoft  and replace the bad one.",
+            "title": "FAQ"
+        }
+    ]
+}
