@@ -1,4 +1,4 @@
-When awake, it iterates whourgh all its children and binds controller names so that it knows what it can play and what not.
+When awake, it iterates through all its children and binds controller names so that it knows what it can play and what not.
 
 ## Monobehaviour
 ### Awake

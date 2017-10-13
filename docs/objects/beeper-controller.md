@@ -1,4 +1,3 @@
-#Beeper controller
 Cotroller just holds a sounds to be played as well as string designation of the particular beeeper name.
 
 ## Variables

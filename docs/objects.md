@@ -84,7 +84,6 @@ Function          | Purpose
 
 ### Rigidbody player controller
 
-
 ## Beeper
 Beepers are designed to simply play sounds when certain events happen within the game. Beeper objects have beeper manager and beeper controlers.
 

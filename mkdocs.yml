@@ -4,8 +4,10 @@ theme: material
 pages: 
   - Framework overview : 'index.md'
   - Getting started : 'getting-started.md'
-  - New experiment : 'new-experiment.md'
-  - Experiment flow : 'experiment-flow.md'
+  - Experiment :
+    - 'Overview' : 'experiment/overview.md'
+    - 'Flow' : 'experiment/flow.md'
+    - 'New experiemnt' : 'experiment/new-experiment.md'    
   - Controller objects :
     - 'Overview' : 'objects.md' 
     - 'Arena object manager' : 'objects/arena-object-manager.md'    
