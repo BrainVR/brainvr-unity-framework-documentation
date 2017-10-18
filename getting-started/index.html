@@ -347,6 +347,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../experiment/class/" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../experiment/flow/" title="Flow" class="md-nav__link">
       Flow
     </a>
@@ -395,7 +407,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../objects/" title="Overview" class="md-nav__link">
+    <a href="../objects/overview/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -629,50 +641,50 @@
 <h3 id="necessary-objects">Necessary objects</h3>
 <ul>
 <li>
-<p><a href="../objects/#player">Player controller</a> needs to be in the scene. Player controller is just an abstract class you need to extend. The framwork comes with RigidBodyPlayerController which has a prefab in the Brainvr/Player folder. If not using VR, you can safely go with that.</p>
+<p><a href="../objects/overview/#player">Player controller</a> needs to be in the scene. Player controller is just an abstract class you need to extend. The framwork comes with RigidBodyPlayerController which has a prefab in the Brainvr/Player folder. If not using VR, you can safely go with that.</p>
 </li>
 <li>
-<p><a href="../objects/#experiement manager">Experiment manager</a> Experiment manager takes care of settings loading and starting up the scene.</p>
+<p><a href="../objects/overview/#experiment-manager">Experiment manager</a> Experiment manager takes care of settings loading and starting up the scene.</p>
 </li>
 <li>
-<p><a href="../objects/#log manager">Log manager</a> Takes care of all the logging. It resides in the Libraries folder under the brain-vr-logger. </p>
+<p><a href="../objects/overview/#log-manager">Log manager</a> Takes care of all the logging. It resides in the Libraries folder under the brain-vr-logger. </p>
 </li>
 <li>
-<p><a href="../objects/#input manager">Input manager</a> loggs and sends events about particular key presses. It's importance is mainly in conjunction with the logger.</p>
+<p><a href="../objects/overview/#input-manager">Input manager</a> loggs and sends events about particular key presses. It's importance is mainly in conjunction with the logger.</p>
 </li>
 <li>
-<p><a href="../objects/#crosshair">Crosshair</a> needs to be present, even if you don't want to show it. It deals with raycasting as well, which your experiment might almost certainly need.</p>
+<p><a href="../objects/overview/#crosshair">Crosshair</a> needs to be present, even if you don't want to show it. It deals with raycasting as well, which your experiment might almost certainly need.</p>
 </li>
 <li>
-<p><a href="../objects/#menu">Menu</a> allows starting and stopping of experiment as well as returning to main menu.</p>
+<p><a href="../objects/overview/#menu">Menu</a> allows starting and stopping of experiment as well as returning to main menu.</p>
 </li>
 </ul>
 <h3 id="optional-objects">Optional objects</h3>
 <ul>
 <li>
-<p><a href="../objects/#info canvas">Info canvas</a> deals with displaying information on the screen. You don't have to include it if your game does not need it.</p>
+<p><a href="../objects/overview/#info-canvas">Info canvas</a> deals with displaying information on the screen. You don't have to include it if your game does not need it.</p>
 </li>
 <li>
-<p><a href="../objects/#navigation manager">Navigation manager</a> allows to show gps like navigation on the floor or other means of navigating player.</p>
+<p><a href="../objects/overview/#navigation manager">Navigation manager</a> allows to show gps like navigation on the floor or other means of navigating player.</p>
 </li>
 <li>
-<p><a href="../objects/#beeper manager">Beeper manager</a> allows to play sounds during the experiment.</p>
+<p><a href="../objects/overview/#beeper manager">Beeper manager</a> allows to play sounds during the experiment.</p>
 </li>
 <li>
-<p><a href="../objects/#goal manager">Goal manager</a> allows controlling, placement, visibility settings etc. of target destinations. Each manager controls assigned objects with a goal controller script attached.</p>
+<p><a href="../objects/overview/#goal manager">Goal manager</a> allows controlling, placement, visibility settings etc. of target destinations. Each manager controls assigned objects with a goal controller script attached.</p>
 </li>
 <li>
-<p><a href="../objects/#mark manager">Mark manager</a> similar to goal manager, but it doesn't implement any functions related to trigger entering etc.</p>
+<p><a href="../objects/overview/#mark manager">Mark manager</a> similar to goal manager, but it doesn't implement any functions related to trigger entering etc.</p>
 </li>
 <li>
-<p><a href="../objects/#arduino controller">Arduino controller</a> is useful if you need to send synchronisation to other devices, let's say to the EEG or EKG recordings. It is based on the <a href="https://github.com/hejtmy/iEEGArduinoConnector/tree/NET_3.5">Arduino iEEG controller</a> built dll.</p>
+<p><a href="../objects/overview/#arduino controller">Arduino controller</a> is useful if you need to send synchronisation to other devices, let's say to the EEG or EKG recordings. It is based on the <a href="https://github.com/hejtmy/iEEGArduinoConnector/tree/NET_3.5">Arduino iEEG controller</a> built dll.</p>
 </li>
 </ul>
 <p>After you have these objects in the scene, you need to implement your new experiment. Read more on the coding part <a href="new-experiment.md">later</a>. Let's work with the demo experiment so far.</p>
 <h2 id="managing-the-experiment-in-scene">Managing the experiment in scene</h2>
 <p>So now you have all the objects ready, it is time to put the expriment files and settings where they belong and test out, whether we can run this thing.</p>
 <h3 id="managing-settings">Managing settings</h3>
-<p>It is important to understand how the experiment loading works because it is not fully straightworward. Expeirment settings are either parsed from json into <a href="../objects/#Settings holder">SettingsHolder</a> class or they can be inserted in the scene itself, for faster development. In the built game, only parsed settings are allowed.</p>
+<p>It is important to understand how the experiment loading works because it is not fully straightworward. Expeirment settings are either parsed from json into <a href="../objects/overview/#Settings holder">SettingsHolder</a> class or they can be inserted in the scene itself, for faster development. In the built game, only parsed settings are allowed.</p>
 <p>The parsing happens in the MainMenu scene, so if you are developping the paradigm from the game, you need to serialise your settings into asset and use that from within the scene. This allows you faster editing and testgin as well.</p>
 <p>In the experiment manager, you have parrented Settings object. This object is either empty, or holds DemoExperimentSettings asset. If it doens't, search for it and move it there. </p>
 <p>This shoudl be all :) </p>

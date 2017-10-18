@@ -246,6 +246,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../class/" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../flow/" title="Flow" class="md-nav__link">
       Flow
     </a>
@@ -346,7 +358,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../objects/" title="Overview" class="md-nav__link">
+    <a href="../../objects/overview/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -526,7 +538,7 @@
 <h2 id="creating-experiment-class">Creating experiment class</h2>
 <h3 id="required-functions">Required functions</h3>
 <p>Below is a complete list of functions that need to be implemented in the Expeirment flow. Many of these functions can effectively remain empty without hindering your expeirment performance. They are just there in case you need them.</p>
-<p>Experiment functions:</p>
+<p>Experiment functions:
 <div class="codehilite"><pre><span></span><span class="k">public</span> <span class="k">abstract</span> <span class="k">void</span> <span class="nf">AddSettings</span><span class="p">(</span><span class="n">ExperimentSettings</span> <span class="n">settings</span><span class="p">);</span>
 <span class="k">void</span> <span class="nf">OnExperimentInitialise</span><span class="p">();</span>
 <span class="k">void</span> <span class="nf">AfterExperimentInitialise</span><span class="p">();</span>
@@ -538,10 +550,8 @@
 <span class="k">void</span> <span class="nf">AfterExperimentFinished</span><span class="p">();</span>
 <span class="k">void</span> <span class="nf">OnExperimentClosed</span><span class="p">();</span>
 <span class="k">void</span> <span class="nf">AfterExperimentClosed</span><span class="p">();</span>
-</pre></div>
-
-
-<p>Trial functions:</p>
+</pre></div></p>
+<p>Trial functions:
 <div class="codehilite"><pre><span></span><span class="k">void</span> <span class="nf">OnTrialSetup</span><span class="p">();</span>
 <span class="k">void</span> <span class="nf">AfterTrialSetup</span><span class="p">();</span>
 <span class="k">void</span> <span class="nf">OnTrialStart</span><span class="p">();</span>
@@ -551,14 +561,10 @@
 <span class="k">void</span> <span class="nf">OnTrialClosed</span><span class="p">();</span>
 <span class="k">void</span> <span class="nf">AfterTrialClosed</span><span class="p">();</span>
 <span class="kt">bool</span> <span class="nf">CheckForEnd</span><span class="p">();</span>
-</pre></div>
-
-
-<p>Logging Functions:</p>
+</pre></div></p>
+<p>Logging Functions:
 <div class="codehilite"><pre><span></span><span class="k">public</span> <span class="k">abstract</span> <span class="kt">string</span> <span class="nf">ExperimentHeaderLog</span><span class="p">();</span>
-</pre></div>
-
-
+</pre></div></p>
 <h2 id="creating-experiment-settings-class">Creating experiment settings class</h2>
 <p>Need
 - Settings object
@@ -598,7 +604,7 @@
           </a>
         
         
-          <a href="../../objects/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../objects/overview/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">

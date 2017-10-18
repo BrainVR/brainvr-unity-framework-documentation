@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-10-13</lastmod>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>/getting-started/</loc>
-     <lastmod>2017-10-13</lastmod>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,19 +21,25 @@
         
     <url>
      <loc>/experiment/overview/</loc>
-     <lastmod>2017-10-13</lastmod>
+     <lastmod>2017-10-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/experiment/class/</loc>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/experiment/flow/</loc>
-     <lastmod>2017-10-13</lastmod>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/experiment/new-experiment/</loc>
-     <lastmod>2017-10-13</lastmod>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -42,44 +48,44 @@
     
         
     <url>
-     <loc>/objects/</loc>
-     <lastmod>2017-10-13</lastmod>
+     <loc>/objects/overview/</loc>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/objects/arena-object-manager/</loc>
-     <lastmod>2017-10-13</lastmod>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/objects/arena-object/</loc>
-     <lastmod>2017-10-13</lastmod>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/objects/beeper-manager/</loc>
-     <lastmod>2017-10-13</lastmod>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/objects/beeper-controller/</loc>
-     <lastmod>2017-10-13</lastmod>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/objects/experiment-manager/</loc>
-     <lastmod>2017-10-13</lastmod>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/objects/player-controller/</loc>
-     <lastmod>2017-10-13</lastmod>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -88,7 +94,7 @@
     
     <url>
      <loc>/logging/</loc>
-     <lastmod>2017-10-13</lastmod>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -96,7 +102,7 @@
     
     <url>
      <loc>/troubleshooting/</loc>
-     <lastmod>2017-10-13</lastmod>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

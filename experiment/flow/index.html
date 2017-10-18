@@ -244,6 +244,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../class/" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -333,7 +345,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../objects/" title="Overview" class="md-nav__link">
+    <a href="../../objects/overview/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -502,7 +514,7 @@
 <p>Trials run only after Expeirment is started and before it is finished. Initialisation and setup are used for instantiating oobjects and setups that need to be done in certain order. We provide two separate functions just in case somebody needs it. </p>
 <p>Unlike Trial functions, expeirment functions cannot be run separately, they are run in blocks of 1-3 and 4-5 with <code>StartExperiment</code> and <code>FinishExpeirment</code> functions. You don't necessarilly need to use <code>FinishExpeirment</code> function, as the experiment finishes automatically if the  <code>CheckForEnd()</code> function evaluates to true.</p>
 <p>Each stage has <code>OnExperiment[Setup/Start ..]</code> and `AfterExperiment[Setup/Start..] abstract functions that need to be implemented. These functions can remain empty, but Experiment will call them during execution.</p>
-<p>Example:</p>
+<p>Example:
 <div class="codehilite"><pre><span></span><span class="k">private</span> <span class="k">void</span> <span class="nf">ExperimentSetup</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="n">OnExperimentSetup</span><span class="p">();</span>
@@ -511,9 +523,7 @@
     <span class="n">ExperimentState</span> <span class="p">=</span> <span class="n">ExperimentState</span><span class="p">.</span><span class="n">WaitingToStart</span><span class="p">;</span>
     <span class="n">AfterExperimentSetup</span><span class="p">();</span>
 <span class="p">}</span>
-</pre></div>
-
-
+</pre></div></p>
 <p>You can see that the <code>Experiment</code> setup function will eventually call both <code>OnExperimentSetup</code> and <code>AfterExperimentSetup</code> functions so your child needs to implement them. usually <code>On</code> fuynction is called in the very beginning, and <code>After</code> functino at an end, but there are some exceptions that should make things cascade less violently. E.g. <code>experimentStart</code> calls <code>AfterExpeirmentStart</code> function before calling <code>TrialSetup</code>. this is because otherwise trial would be already already setup, when the callback would return to the function and started calling After function. </p>
 <p>If these exceptions or other positioning causes problems with timing, feel free to change the order in the Experiment class.</p>
 <h2 id="trial-flow">Trial flow</h2>
@@ -543,7 +553,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../overview/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../class/" title="API" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -552,7 +562,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Overview
+                API
               </span>
             </div>
           </a>

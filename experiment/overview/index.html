@@ -264,29 +264,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fucntions" title="Fucntions" class="md-nav__link">
-    Fucntions
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#startexperiment" title="StartExperiment" class="md-nav__link">
-    StartExperiment
+  <a href="#events" title="Events" class="md-nav__link">
+    Events
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#finishexperiment" title="FinishExperiment" class="md-nav__link">
-    FinishExperiment
+      
+        <li class="md-nav__item">
+  <a href="#functions" title="Functions" class="md-nav__link">
+    Functions
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -296,6 +283,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../class/" title="API" class="md-nav__link">
+      API
+    </a>
   </li>
 
         
@@ -353,7 +352,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../objects/" title="Overview" class="md-nav__link">
+    <a href="../../objects/overview/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -486,29 +485,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fucntions" title="Fucntions" class="md-nav__link">
-    Fucntions
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#startexperiment" title="StartExperiment" class="md-nav__link">
-    StartExperiment
+  <a href="#events" title="Events" class="md-nav__link">
+    Events
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#finishexperiment" title="FinishExperiment" class="md-nav__link">
-    FinishExperiment
+      
+        <li class="md-nav__item">
+  <a href="#functions" title="Functions" class="md-nav__link">
+    Functions
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -529,13 +515,104 @@
                 
                   <h1>Overview</h1>
                 
-                <h2 id="variables">Variables</h2>
-<h2 id="fucntions">Fucntions</h2>
-<h3 id="startexperiment">StartExperiment</h3>
-<p><code>void StartExperiment()</code></p>
-<p>Can only bve called if the experiment is not in state Runnign</p>
-<h3 id="finishexperiment">FinishExperiment</h3>
-<p><code>void FinishExperiment()</code></p>
+                <p>Experiment class is the major part of this framework. It is a Unity component, that can be attached to an empty object, but it is usualy taken care of with <a href="../../objects/experiment-manager/">ExperimentManager</a>. It has a certain enforced <a href="../flow/">flow</a> that you can extend. This class is responsible for logging experiment state changes and events, keeping clear structure of function calls, keeps state of trials nad expeirment itself etc.</p>
+<h2 id="variables">Variables</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../class/#aame">Name</a></td>
+<td>Name of the experiment. important for serialisation</td>
+</tr>
+<tr>
+<td><a href="../class/#tiralnumber">TrialNumber</a></td>
+<td>Tracks the trial number.</td>
+</tr>
+<tr>
+<td><a href="../class/#experimentnumber">ExperimentNumber</a></td>
+<td>In case we are runnign multiple experiments at the same time.</td>
+</tr>
+<tr>
+<td><a href="../class/#experimentstate">ExperimentState</a></td>
+<td>Tracks the state of the expeirment</td>
+</tr>
+</tbody>
+</table>
+<h2 id="events">Events</h2>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../class/#expeirmenteventsent">ExpeirmentEventSent</a></td>
+<td>Sends info about event being sent. Mostly for logging purposes.</td>
+</tr>
+<tr>
+<td><a href="../class/#trialstatechanged">TrialStateChanged</a></td>
+<td>Sends info about change in trial state</td>
+</tr>
+<tr>
+<td><a href="../class/#trialeventsent">TrialEventSent</a></td>
+<td>Sends info for logging purposes.</td>
+</tr>
+<tr>
+<td><a href="../class/#messagesent">MessageSent</a></td>
+<td>Generic message event to logger.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="functions">Functions</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../class/#startexpeirment">StartExperiment</a></td>
+<td>Starts the expeirment if possible.</td>
+</tr>
+<tr>
+<td><a href="../class/#trialsetnext">TrialSetNext</a></td>
+<td>Sets the trial to the next one if possible.</td>
+</tr>
+<tr>
+<td><a href="../class/#forcenexttrial">ForceNextTrial</a></td>
+<td>Forces next trial.</td>
+</tr>
+<tr>
+<td><a href="../class/#forcesettrial">ForceSetTrial</a></td>
+<td>Forces the trial to be set to designated number</td>
+</tr>
+<tr>
+<td><a href="../class/#fircefinishtrial">ForceFinishTrial</a></td>
+<td>Finishes the trial in any state</td>
+</tr>
+<tr>
+<td><a href="../class/#finishexpeirment">FinishExperiment</a></td>
+<td>Finishes the expeirment immediately</td>
+</tr>
+<tr>
+<td><a href="../class/#addsettings">AddSettings</a></td>
+<td>Override to allow adding different settings to implemetned expeiremnts</td>
+</tr>
+<tr>
+<td><a href="../class/#expeirmentheaderlog">ExperimentHeaderLog</a></td>
+<td>Logs the speicific header for each expeirment</td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
@@ -569,13 +646,13 @@
           </a>
         
         
-          <a href="../flow/" title="Flow" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../class/" title="API" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Flow
+                API
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

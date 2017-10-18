@@ -16,7 +16,7 @@
     
     
       
-        <title>Arena object - BrainVR unity framework overview</title>
+        <title>API - BrainVR unity framework overview</title>
       
     
     
@@ -76,11 +76,11 @@
             
               
                 <span class="md-header-nav__parent">
-                  Controller objects
+                  Experiment
                 </span>
               
             
-            Arena object
+            API
           
         </span>
       </div>
@@ -211,10 +211,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Experiment
@@ -222,80 +224,6 @@
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
         Experiment
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../experiment/overview/" title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../experiment/class/" title="API" class="md-nav__link">
-      API
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../experiment/flow/" title="Flow" class="md-nav__link">
-      Flow
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../experiment/new-experiment/" title="New experiemnt" class="md-nav__link">
-      New experiemnt
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
-    
-    <label class="md-nav__link" for="nav-4">
-      Controller objects
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Controller objects
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -316,18 +244,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../arena-object-manager/" title="Arena object manager" class="md-nav__link">
-      Arena object manager
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -335,86 +251,33 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Arena object
+        API
       </label>
     
-    <a href="./" title="Arena object" class="md-nav__link md-nav__link--active">
-      Arena object
+    <a href="./" title="API" class="md-nav__link md-nav__link--active">
+      API
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#show" title="Show" class="md-nav__link">
-    Show
+  <a href="#startexperiment" title="StartExperiment" class="md-nav__link">
+    StartExperiment
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#hide" title="Hide" class="md-nav__link">
-    Hide
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#set-rotation" title="Set rotation" class="md-nav__link">
-    Set rotation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#startrotation" title="StartRotation" class="md-nav__link">
-    StartRotation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stoprotation" title="StopRotation" class="md-nav__link">
-    StopRotation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setsize" title="SetSize" class="md-nav__link">
-    SetSize
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setcolor" title="SetColor" class="md-nav__link">
-    SetColor
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#settype" title="SetType" class="md-nav__link">
-    SetType
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#switch" title="Switch" class="md-nav__link">
-    Switch
+  <a href="#finishexperiment" title="FinishExperiment" class="md-nav__link">
+    FinishExperiment
   </a>
   
 </li>
@@ -434,7 +297,91 @@
 
 
   <li class="md-nav__item">
-    <a href="../beeper-manager/" title="Beeper manager" class="md-nav__link">
+    <a href="../flow/" title="Flow" class="md-nav__link">
+      Flow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new-experiment/" title="New experiemnt" class="md-nav__link">
+      New experiemnt
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Controller objects
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Controller objects
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../objects/overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../objects/arena-object-manager/" title="Arena object manager" class="md-nav__link">
+      Arena object manager
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../objects/arena-object/" title="Arena object" class="md-nav__link">
+      Arena object
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../objects/beeper-manager/" title="Beeper manager" class="md-nav__link">
       Beeper manager
     </a>
   </li>
@@ -446,7 +393,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../beeper-controller/" title="Beeper controller" class="md-nav__link">
+    <a href="../../objects/beeper-controller/" title="Beeper controller" class="md-nav__link">
       Beeper controller
     </a>
   </li>
@@ -458,7 +405,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../experiment-manager/" title="Experiment manager" class="md-nav__link">
+    <a href="../../objects/experiment-manager/" title="Experiment manager" class="md-nav__link">
       Experiment manager
     </a>
   </li>
@@ -470,7 +417,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../player-controller/" title="Player controller" class="md-nav__link">
+    <a href="../../objects/player-controller/" title="Player controller" class="md-nav__link">
       Player controller
     </a>
   </li>
@@ -519,71 +466,20 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#show" title="Show" class="md-nav__link">
-    Show
+  <a href="#startexperiment" title="StartExperiment" class="md-nav__link">
+    StartExperiment
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#hide" title="Hide" class="md-nav__link">
-    Hide
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#set-rotation" title="Set rotation" class="md-nav__link">
-    Set rotation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#startrotation" title="StartRotation" class="md-nav__link">
-    StartRotation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stoprotation" title="StopRotation" class="md-nav__link">
-    StopRotation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setsize" title="SetSize" class="md-nav__link">
-    SetSize
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setcolor" title="SetColor" class="md-nav__link">
-    SetColor
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#settype" title="SetType" class="md-nav__link">
-    SetType
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#switch" title="Switch" class="md-nav__link">
-    Switch
+  <a href="#finishexperiment" title="FinishExperiment" class="md-nav__link">
+    FinishExperiment
   </a>
   
 </li>
@@ -603,34 +499,13 @@
               
                 
                 
-                <h1 id="arena-object-controller">Arena object controller</h1>
-<h2 id="show">Show</h2>
-<p><code>public void Show(bool bo = true)</code></p>
-<p>Iterates thorugh all renderers and colliders of the <code>ActiveObject</code> and sets them to the <code>bo</code> parameter. Keeps trigger colliders active regardless.</p>
-<h2 id="hide">Hide</h2>
-<p><code>public void Hide()</code></p>
-<p>Same as <code>Show(false)</code>. Iterates through renderers and colliders on the <code>ActiveObject</code> and disables them.</p>
-<h2 id="set-rotation">Set rotation</h2>
-<p><code>void SetRotation(Quaternion rotation)</code></p>
-<p>Sets <code>ActiveObject</code> to designated rotation.</p>
-<h2 id="startrotation">StartRotation</h2>
-<p><code>void StartRotation(Vector3 direction, float speed)</code></p>
-<p>Starts rotation in direction at a given <code>speed</code>. If rotation is undergoing, it gets stopped and then reinstantiated. Direction of the rotation can be set using negative and positive vectors.</p>
-<h2 id="stoprotation">StopRotation</h2>
-<p><code>void StopRotation()</code></p>
-<p>If the object was rotating, it stops.</p>
-<h2 id="setsize">SetSize</h2>
-<p><code>void SetSize(Vector3 scale)</code></p>
-<p>Sets the scaling of the <code>ActiveObject</code> itself. Doesn't change scale of the controller object itself.</p>
-<h2 id="setcolor">SetColor</h2>
-<p><code>void SetColor(Color color)</code></p>
-<p>Sets the main colour of the renderer material of hte Active object to designated colour. Any reset of colour is done towards the colour the object had during OnEnable call.</p>
-<h2 id="settype">SetType</h2>
-<p><code>void SetType(string s, bool force = false)</code></p>
-<p>Sets the type of the object to one of children objects of the same name. </p>
-<h2 id="switch">Switch</h2>
-<p><code>public bool Switch()</code></p>
-<p>Calls Show if the object is hidden and Hide if the object is shown. Retuns bool with the current state after the change.</p>
+                  <h1>API</h1>
+                
+                <h3 id="startexperiment">StartExperiment</h3>
+<p><code>void StartExperiment()</code></p>
+<p>Can only bve called if the experiment is not in Running state.</p>
+<h3 id="finishexperiment">FinishExperiment</h3>
+<p><code>void FinishExperiment()</code></p>
                 
                   
                 
@@ -649,7 +524,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../arena-object-manager/" title="Arena object manager" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../overview/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -658,19 +533,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Arena object manager
+                Overview
               </span>
             </div>
           </a>
         
         
-          <a href="../beeper-manager/" title="Beeper manager" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../flow/" title="Flow" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Beeper manager
+                Flow
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
