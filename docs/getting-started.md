@@ -12,31 +12,31 @@ If you cloned it through demo project, you can take a look into the Demo scene, 
 
 ### Necessary objects
 
-- [Player controller](objects.md#player) needs to be in the scene. Player controller is just an abstract class you need to extend. The framwork comes with RigidBodyPlayerController which has a prefab in the Brainvr/Player folder. If not using VR, you can safely go with that.
+- [Player controller](objects/overview.md#player) needs to be in the scene. Player controller is just an abstract class you need to extend. The framwork comes with RigidBodyPlayerController which has a prefab in the Brainvr/Player folder. If not using VR, you can safely go with that.
 
-- [Experiment manager](objects.md#experiement manager) Experiment manager takes care of settings loading and starting up the scene.
+- [Experiment manager](objects/overview.md#experiment-manager) Experiment manager takes care of settings loading and starting up the scene.
 
-- [Log manager](objects.md#log manager) Takes care of all the logging. It resides in the Libraries folder under the brain-vr-logger. 
+- [Log manager](objects/overview.md#log-manager) Takes care of all the logging. It resides in the Libraries folder under the brain-vr-logger. 
 
-- [Input manager](objects.md#input manager) loggs and sends events about particular key presses. It's importance is mainly in conjunction with the logger.
+- [Input manager](objects/overview.md#input-manager) loggs and sends events about particular key presses. It's importance is mainly in conjunction with the logger.
 
-- [Crosshair](objects.md#crosshair) needs to be present, even if you don't want to show it. It deals with raycasting as well, which your experiment might almost certainly need.
+- [Crosshair](objects/overview.md#crosshair) needs to be present, even if you don't want to show it. It deals with raycasting as well, which your experiment might almost certainly need.
 
-- [Menu](objects.md#menu) allows starting and stopping of experiment as well as returning to main menu.
+- [Menu](objects/overview.md#menu) allows starting and stopping of experiment as well as returning to main menu.
 
 ### Optional objects
 
-- [Info canvas](objects.md#info canvas) deals with displaying information on the screen. You don't have to include it if your game does not need it.
+- [Info canvas](objects/overview.md#info-canvas) deals with displaying information on the screen. You don't have to include it if your game does not need it.
 
-- [Navigation manager](objects.md#navigation manager) allows to show gps like navigation on the floor or other means of navigating player.
+- [Navigation manager](objects/overview.md#navigation manager) allows to show gps like navigation on the floor or other means of navigating player.
 
-- [Beeper manager](objects.md#beeper manager) allows to play sounds during the experiment.
+- [Beeper manager](objects/overview.md#beeper manager) allows to play sounds during the experiment.
 
-- [Goal manager](objects.md#goal manager) allows controlling, placement, visibility settings etc. of target destinations. Each manager controls assigned objects with a goal controller script attached.
+- [Goal manager](objects/overview.md#goal manager) allows controlling, placement, visibility settings etc. of target destinations. Each manager controls assigned objects with a goal controller script attached.
 
-- [Mark manager](objects.md#mark manager) similar to goal manager, but it doesn't implement any functions related to trigger entering etc.
+- [Mark manager](objects/overview.md#mark manager) similar to goal manager, but it doesn't implement any functions related to trigger entering etc.
 
-- [Arduino controller](objects.md#arduino controller) is useful if you need to send synchronisation to other devices, let's say to the EEG or EKG recordings. It is based on the [Arduino iEEG controller](https://github.com/hejtmy/iEEGArduinoConnector/tree/NET_3.5) built dll.
+- [Arduino controller](objects/overview.md#arduino controller) is useful if you need to send synchronisation to other devices, let's say to the EEG or EKG recordings. It is based on the [Arduino iEEG controller](https://github.com/hejtmy/iEEGArduinoConnector/tree/NET_3.5) built dll.
 
 After you have these objects in the scene, you need to implement your new experiment. Read more on the coding part [later](new-experiment.md). Let's work with the demo experiment so far.
 
@@ -44,7 +44,7 @@ After you have these objects in the scene, you need to implement your new experi
 So now you have all the objects ready, it is time to put the expriment files and settings where they belong and test out, whether we can run this thing.
 
 ### Managing settings
-It is important to understand how the experiment loading works because it is not fully straightworward. Expeirment settings are either parsed from json into [SettingsHolder](objects.md#Settings holder) class or they can be inserted in the scene itself, for faster development. In the built game, only parsed settings are allowed.
+It is important to understand how the experiment loading works because it is not fully straightworward. Expeirment settings are either parsed from json into [SettingsHolder](objects/overview.md#Settings holder) class or they can be inserted in the scene itself, for faster development. In the built game, only parsed settings are allowed.
 
 The parsing happens in the MainMenu scene, so if you are developping the paradigm from the game, you need to serialise your settings into asset and use that from within the scene. This allows you faster editing and testgin as well.
 

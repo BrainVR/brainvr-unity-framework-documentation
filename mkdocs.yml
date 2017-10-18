@@ -9,7 +9,7 @@ pages:
     - 'Flow' : 'experiment/flow.md'
     - 'New experiemnt' : 'experiment/new-experiment.md'    
   - Controller objects :
-    - 'Overview' : 'objects.md' 
+    - 'Overview' : 'objects/overview.md' 
     - 'Arena object manager' : 'objects/arena-object-manager.md'    
     - 'Arena object' : 'objects/arena-object.md'
     - 'Beeper manager' : 'objects/beeper-manager.md'
