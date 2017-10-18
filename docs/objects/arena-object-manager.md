@@ -24,7 +24,7 @@ Calls [`Hide`](arena-object.md#hide) on object at that particular index if it ex
 ## HideAll
 `public void HideAll()`
 
-Same as `ShowAll(false)`. Runs Hide on all arena object controllers. See [Hide](arenaobject.md#hide).
+Same as `ShowAll(false)`. Runs Hide on all arena object controllers. See [Hide](arena-object.md#hide).
 
 ## SetColor
 `void SetColor(Color color)`

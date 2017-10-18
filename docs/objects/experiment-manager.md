@@ -11,7 +11,7 @@ If the experiment is not runnign, it starts hte expeirment.
 ### StopExpeirment
 `public void StopExperiment()`
 
-Stops the expeirmenting if the experiment is running.
+Stops the experiment if the experiment is running.
 
 ### RestartExperiment
 `public void RestartExperiment()`
