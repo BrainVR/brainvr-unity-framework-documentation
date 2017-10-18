@@ -25,3 +25,4 @@ repo_url: 'https://github.com/brainvr/brainvr-unity-framework'
 markdown_extensions:
   - codehilite
   - admonition
+  - pymdownx.superfences
