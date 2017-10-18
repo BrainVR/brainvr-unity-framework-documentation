@@ -6,6 +6,7 @@ pages:
   - Getting started : 'getting-started.md'
   - Experiment :
     - 'Overview' : 'experiment/overview.md'
+    - 'API' : 'experiment/class.md'
     - 'Flow' : 'experiment/flow.md'
     - 'New experiemnt' : 'experiment/new-experiment.md'    
   - Controller objects :
