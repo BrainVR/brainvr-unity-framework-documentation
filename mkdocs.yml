@@ -13,6 +13,8 @@ pages:
     - 'Overview' : 'objects/overview.md' 
     - 'Arena object manager' : 'objects/arena-object-manager.md'    
     - 'Arena object' : 'objects/arena-object.md'
+    - 'Goal manager' : 'objects/goal-manager.md'        
+    - 'Goal controller' : 'objects/goal-controller.md'
     - 'Beeper manager' : 'objects/beeper-manager.md'
     - 'Beeper controller' : 'objects/beeper-controller.md'
     - 'Experiment manager' : 'objects/experiment-manager.md'
