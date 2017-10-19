@@ -2,7 +2,7 @@
 Arena objects are game objects with implemented functions for positionings, rotations etc. Arena objects come with Arena object manager as well, which allows grouping of controllers of the same type and doing madifications groupwise (such as setting same height or colour). Specific implementations of arena object is the Goal object ([Goal controller](#goal controller)and [Goal manager](#goal manager)) and mark object ([Mark controller](#mark controller)and [Mark manager](#mark manager)), see those sections for info.
 
 ### Arena object controller
-Arena obejct (AO) controller shoudl consist of a single empty game object with only controller script attached. It has `PossibleObjects` and `ActiveObject` parameters which are usually children obejcts, that AO can change "into". When creating an AO object, don't forget to add it's child object as well. Goal object prefab has one such example prepared.
+Arena obejct (AO) controller shoudl consist of a single empty game object with only controller script attached. It has `PossibleObjects` and `ActiveObject` parameters which are usually children obejcts, that AO can change "into". When creating an AO object, don't forget to add it's child object as well. Arena object shoudl have all colliders and mesh renderers in child objects, not on the same object where is the controller script.
 
 #### Variables
 
@@ -46,14 +46,32 @@ Function          | Purpose
 [SetType](arena-object-manager.md#set-type) | Sets all assigned objects to the one desired, based on its string name.
 
 ### Goal Object
-Goal object adds some additional functionality to the arena object by adding event functionality. It inherits all the functionality from the [Arena Object]() and [].
+Goal object adds some additional functionality to the arena object by adding event functionality. It inherits all the functionality from the [Arena Object](#Arena Object) and [Arena object Controller](#Arena object Controller).
 
 #### Goal controller
+Goal controller (GC) extends [Arena object controller](#arena-object-controller) but adds goal/target specific functinoality
+
+#### Variables
+Variable          | Purpose       
+----------------- | ------------- 
+[GoalName](objects/goal-controller.md#GoalName) | Holds the name of goal object.
+[PlayerInside](objects/goal-controller.md#PlayerInside) | Holds the bool value of if player is inside the goal or not.
+
 ##### Events
+Events          | Purpose       
+----------------- | ------------- 
+[OnEnter](objects/goal-controller.md#OnEnter) | Is sent when player enters the goal object.
+[OnExit](objects/goal-controller.md#OnExit) | Is sent when player exits the goal object.
 
 #### Goal manager
+Goal manager extend [Arena object manager](#Arena-object-manager). It is a singleton that is used to manage and controll all referenced [Goal Controllers](#Goal Controller).
 
-#### Mark manager
+#### Variables
+Variable          | Purpose       
+----------------- | ------------- 
+[GetGoal](objects/goal-manager.md#GetGoal) | Returns a Goal controller script given by index.
+[ResizeGoals](objects/goal-manager.md#ResizeGoals) | Resizes the local scale of all of the goals objects.
+[InstantiateGoalsCircumference](objects/goal-manager.md#InstantiateGoalsCircumference) | Instantiates goals attributes.
 
 ## Experiment manager
 Experiemnt manager is reponsible for loading expeirment from the data and manipulating expeirment states.
@@ -90,7 +108,6 @@ Function          | Purpose
 [LookAtPosition](player-controller.md#lookatposition)| Rotates player to face certain point
 [SetHeight](player-controller.md#movetocenter)| Sets player height
 [SetSpeed](player-controller.md#movetocenter)| Sets player speed
-[]
 
 ### Rigidbody player controller
 
