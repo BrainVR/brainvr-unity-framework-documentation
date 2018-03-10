@@ -17,6 +17,7 @@ pages:
     - 'Goal controller' : 'objects/goal-controller.md'
     - 'Navigation manager' : 'objects/navigation-manager.md'
     - 'Navigation controller' : 'objects/navigation-controller.md'
+    - 'Map controller' : 'objects/map-controller.md'
     - 'Beeper manager' : 'objects/beeper-manager.md'
     - 'Beeper controller' : 'objects/beeper-controller.md'
     - 'Experiment manager' : 'objects/experiment-manager.md'

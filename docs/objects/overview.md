@@ -35,7 +35,6 @@ Variable          | Purpose
 ----------------- | ------------- 
 Objects | Generic list of all the obejct of the fiven type that manager holds.
 
-
 #### Functions
 Function          | Purpose       
 ----------------- | ------------- 
@@ -86,6 +85,27 @@ Function | Purpose
 [SwitchExperimentState](experiment-manager.md#) | Doens't do anything at this point.
 [SetTrial](experiment-manager.md#) | Sets the trial to designated number.
 
+## Navigation manager
+
+### Functions
+Function | Purpose
+----------------- | ------------- 
+[SetAgent](navigation-manager#) | Sets the obnavmesh agent used for calculations.
+[StartNavigation](navigation-manager#startnavigation) | Turns on navigation.
+[StopNavigation](navigation-manager#stopnavigation) | Turns the navigation off
+[SetTarget](navigation-manager#settarget) |
+[SetNavigationMode](navigation-manager#setnavigationmode) |
+
+### Variables
+Function | Purpose
+----------------- | ------------- 
+
+## Map Controller
+
+### Functions
+Function | Purpose
+----------------- | ------------- 
+
 ## Player controllers
 PLayer controllers build upon the player controller and `IPlayerController` class to proovide bothe control as well as loggin informiaton necessary for conprehensive logs across differnet modalities of play (PC. VR, mobile etc.). Some functiuon needs to be implemented in order ot create sa new player log.
 
@@ -96,7 +116,6 @@ Variable          | Purpose
 [Rotation](player-controller.md#rotation)| Returns player rotation
 [Vector2Postition](player-controller.md#position)| Returns player position in X and Z
 [PointingDirection](player-controller.md#pointingdirection)| Returns rotation of player pointing.
-
 
 ### Functions
 Function          | Purpose       
