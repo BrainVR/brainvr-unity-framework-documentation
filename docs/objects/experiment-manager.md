@@ -1,6 +1,6 @@
 Experiment manager takes care for the loading and control of the expeirment flow. You can load experiment through `ExperimentLoader`, but Experiment manager offers more to the pont clear loading experience.
 
-Experiment manager needs to be in the scene as it keeps track of hte [Experiment](experiment/experiment) active script and allows certain level of control over it. you shouldn't call experiment directly, just refere to expeirment manager to do all necessary changes and switches ot the Experiment flow.
+Experiment manager needs to be in the scene as it keeps track of the [BaseExperiment](experiment/experiment) active script and allows certain level of control over it. you shouldn't call experiment directly, just refere to expeirment manager to do all necessary changes and switches ot the Experiment flow.
 
 ## Functions
 ### StartExperiment

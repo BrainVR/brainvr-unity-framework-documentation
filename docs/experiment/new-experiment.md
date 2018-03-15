@@ -10,11 +10,16 @@ There are several staps you will need to do to create a new experiment in this f
 ## Creating experiment class
 
 ### Required functions
-Below is a complete list of functions that need to be implemented in the Expeirment flow. Many of these functions can effectively remain empty without hindering your expeirment performance. They are just there in case you need them.
+Below is a complete list of functions that need to be implemented in the Expeirment flo or virtual functions that can be ovewrriten.. Many of these functions can effectively remain empty without hindering your expeirment performance. They are just there in case you need them.
 
-Experiment functions:
+Experiment abstract functions:
 ```{c#}
 public abstract void AddSettings(ExperimentSettings settings);
+bool CheckForEnd();
+```
+
+Experiment functios that can be overriten:
+```{c#}
 void OnExperimentInitialise();
 void AfterExperimentInitialise();
 void OnExperimentSetup();
@@ -37,7 +42,6 @@ void OnTrialFinished();
 void AfterTrialFinished();
 void OnTrialClosed();
 void AfterTrialClosed();
-bool CheckForEnd();
 ```
 
 Logging Functions:
@@ -46,7 +50,6 @@ public abstract string ExperimentHeaderLog();
 ```
 
 ## Creating experiment settings class
-
 
 Need
 - Settings object

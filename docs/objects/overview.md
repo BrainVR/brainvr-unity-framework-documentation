@@ -44,7 +44,7 @@ Function          | Purpose
 [ResetColor](arena-object-manager.md#reset-color)  | resets the color to the original one.
 [SetType](arena-object-manager.md#set-type) | Sets all assigned objects to the one desired, based on its string name.
 
-### Goal Object
+### Goal object
 Goal object adds some additional functionality to the arena object by adding event functionality. It inherits all the functionality from the [Arena Object](#Arena Object) and [Arena object Controller](#Arena object Controller).
 
 #### Goal controller

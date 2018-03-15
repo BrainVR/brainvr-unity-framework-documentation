@@ -5,10 +5,12 @@ This framework requires Standard assets to be present, as it relies on scripts i
 
 Logging and parsing functions rely on [Json.net](https://www.newtonsoft.com/json) libraries. See [troubleshooting](troubleshooting.md) if you see any errors with these .dll files.
 
+Some objects (especially the map controller) requires specific tags and layers to be present in your project. Look into a setup of particular controller.
+
 When you are ready, open the unity and you can start modding.
 
 ## Preparing the scene
-If you cloned it through demo project, you can take a look into the Demo scene, to get the feeling of how the scene shoudl/could be organized. Otherwise, here is a list of necessary and possible objects to be included.
+If you cloned it through demo project, you can take a look at the Demo scene, to get the feeling of how the scene shoudl/could be organized. Otherwise, here is a list of necessary and possible objects to be included.
 
 ### Necessary objects
 
