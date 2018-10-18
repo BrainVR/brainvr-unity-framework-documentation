@@ -34,6 +34,7 @@ void AfterTrialSetup();
 void OnTrialStart();
 void AfterTrialStart();
 void OnTrialFinished();
+void OnTrialForceFinished(){FinishTrial();};
 void AfterTrialFinished();
 void OnTrialClosed();
 void AfterTrialClosed();
