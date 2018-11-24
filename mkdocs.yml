@@ -20,6 +20,7 @@ pages:
     - 'Experiment manager' : 'objects/experiment-manager.md'
     - 'Player controller' : 'objects/player-controller.md'
   - Logging : 'logging.md'
+  - Plugins: 'plugins.md'
   - Troubleshooting : 'troubleshooting.md'
 
 repo_name: 'brainvr/brainvr-unity-framework'

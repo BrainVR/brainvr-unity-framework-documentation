@@ -43,4 +43,4 @@ Each Trial is set to following stages
 Each stage has `OnTrial[Setup/Start ..]` and `AfterTrial[Setup/Start ..]` functions that need to be implemented in a similar way as the expeirment does.
 
 ### Force finishing trial
-I provide special case for skipping or force finishing trials. Because sometimes quitting trial in a middle can have unexpected effects (for example you subscribed to an event and never unsubscribed, because that happens before trial is finished). Function `TrialSetNext(int trialNumber)` force finishes a trial. Default virtual behaviuour is to `FinishTrial()`, but you can override this behaviour.
+I provide special case for skipping or force finishing trials. Because sometimes quitting trial in a middle can have unexpected effects (for example you subscribed to an event and never unsubscribed, because that happens before trial is finished). Function `TrialSetNext(int trialNumber)` force finishes a trial. Default virtual behaviour is to `FinishTrial()`, but you can override this. Don't forget to `FinishTrial()` in the override (or call base);
