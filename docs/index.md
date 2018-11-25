@@ -18,14 +18,13 @@ BrainVR unity framework is a collection of unity objects, wrappers and placehold
 
 - Useful [plugins](plugins.md) for navigation research, networking or arduino synchronisation
 
-
 ## Is it user friendly?
-Unlike other solutions, this framework is not particularly user friendly. It doesnt provide many components to dragg and dropp and requires understanding of both Unity and C# to an intermediate level. You should be familiar with all that Unity offers, such as basic transform and material modifications, sounds and navigation, as well as C# concepts such as interfaces, abstract classes and delegates with events. 
+Unlike other solutions, this framework is not particularly user friendly. It doesn't provide many components to drag and drop and requires understanding of both Unity and C# to an intermediate level. You should be familiar with all that Unity offers, such as basic transform and material modifications, sounds and navigation, as well as C# concepts such as interfaces, abstract classes and delegates with events. 
 
-Nevertheless, if you don't feel comfortable but would like trying it out anyway, there are already implemented projects that might help you through your first paradigm. And you can always contact us if you need any help.
+Nevertheless, if you don't feel comfortable but would like trying it out anyway, there are already implemented projects that might help you through your first paradigm. And you can always contact me if you need any help.
 
 ## Why and when to use it?
-If you are somewhat fluent in C# and would like to work with something that is going to speed up research development in respect to logging standards and settings parsing, this framework shoudl alleviate a lot of work. It will have some learning curve to it, but many of the troublesome parts of paradigm development have been taken care of :)
+If you are somewhat fluent in C# and would like to work with something that is going to speed up research development in respect to logging standards and settings parsing, this framework should alleviate a lot of work. It will have some learning curve to it, but many of the troublesome parts of paradigm development have been taken care of :)
 
 ## Quick start
 This framework comes with some defaults standard assets, but otherwise you should be able to include it simply in your project as a git clone.
@@ -35,6 +34,6 @@ git clone https://github.com/BrainVR/brainvr-unity-framework.git
 ```
 
 ## Who are we?
-This framework has been coded by [Lukáš Hejtmánek](hejtmy.com) while working at the National Institute of Mental Health and Inistitute of Physiology, ASCR. Some parts were developed in collaboration with researchers at the Center for Neuroscince at University of California, Davis.
+This framework has been coded by [Lukáš Hejtmánek](hejtmy.com) while working at the National Institute of Mental Health and Inistitute of Physiology, ASCR. Some parts were developed in collaboration with researchers at the Center for Neuroscience at University of California, Davis.
 
 ## Acknowledgements
